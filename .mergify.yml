@@ -1,0 +1,14 @@
+pull_request_rules:
+- actions:
+    merge:
+      method: squash
+      rebase_fallback: merge
+  conditions:
+  - base=master
+  - label!=no-mergify
+  - '#approved-reviews-by>=1'
+  - status-success=review/gitmate/pr
+  - 'status-success=ci/circleci: prepare'
+  - 'status-success=ci/circleci: lint'
+  - 'status-success=ci/circleci: test'
+  name: master

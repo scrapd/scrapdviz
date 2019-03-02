@@ -1,0 +1,6 @@
+.DS_Store
+.next/
+bower_components/
+build/
+node_modules/
+src/config-dev.js
