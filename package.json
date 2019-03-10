@@ -35,9 +35,11 @@
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "@zeit/next-css": "^1.0.1",
+    "antd": "^3.13.6",
     "express": "^4.16.4",
     "facepaint": "^1.2.1",
     "lru-cache": "^5.1.1",
+    "moment": "^2.24.0",
     "next": "^8.0.3",
     "next-redux-wrapper": "^3.0.0-alpha.2",
     "react": "^16.8.3",
@@ -51,8 +53,11 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
+    "babel-plugin-css-modules-transform": "^1.6.2",
     "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-import": "^1.11.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "css-purify-webpack-loader": "^1.0.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
     "eslint": "^5.15.0",
@@ -85,7 +90,15 @@
             {
               "sourceMap": true
             }
-          ]
+          ],
+          [
+            "import",
+            {
+              "libraryName": "antd",
+              "style": "css"
+            }
+          ],
+          "css-modules-transform"
         ]
       },
       "production": {
@@ -93,18 +106,29 @@
           "next/babel"
         ],
         "plugins": [
+          "css-modules-transform",
           "emotion"
         ]
       },
       "test": {
         "presets": [
-          "@babel/preset-env",
-          "@babel/preset-react"
+          "next/babel"
         ],
         "plugins": [
-          "emotion",
-          "transform-es2015-modules-commonjs",
-          "dynamic-import-node"
+          "css-modules-transform",
+          [
+            "emotion",
+            {
+              "sourceMap": true
+            }
+          ],
+          [
+            "import",
+            {
+              "libraryName": "antd",
+              "style": "true"
+            }
+          ]
         ]
       }
     }

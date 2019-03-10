@@ -1,4 +1,5 @@
 import App, { Container } from 'next/app';
+import Head from 'next/head';
 import React from 'react';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
@@ -24,6 +25,9 @@ class CustomApp extends App {
     const { Component, pageProps, store } = this.props;
     return (
       <Container>
+        <Head>
+          <title>ScrAPDviz</title>
+        </Head>
         <ServiceWorker />
         <Provider store={store}>
           <Component {...pageProps} />
