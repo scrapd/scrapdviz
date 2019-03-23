@@ -3,7 +3,7 @@ import React from 'react';
 import moment from 'moment';
 import { DatePicker, Table } from 'antd';
 import { connect } from 'react-redux';
-import { fetchDataAsync } from '../redux/store';
+import { fetchDataAsync, selectDate } from '../redux/store';
 
 const RangePicker = DatePicker.RangePicker;
 
@@ -35,6 +35,7 @@ class ScrapdGrid extends React.Component {
     console.log('From: ', dateStrings[0], ', to: ', dateStrings[1]);
     let dateFilter = { from_: dates[0], to: dates[1] };
     this.props.fetchDataAsync(dateFilter);
+    this.props.selectDate(dateFilter);
   }
 
   render() {
@@ -63,6 +64,7 @@ class ScrapdGrid extends React.Component {
 
 ScrapdGrid.propTypes = {
   fetchDataAsync: PropTypes.func.isRequired,
+  selectDate: PropTypes.func.isRequired,
   fatalities: PropTypes.array
 };
 
@@ -73,5 +75,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchDataAsync }
+  { fetchDataAsync, selectDate }
 )(ScrapdGrid);
