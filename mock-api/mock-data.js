@@ -148,5 +148,20 @@ export const fatalities = [
     "Location": "8100 block of N. Lamar Blvd.",
     "Notes": "The preliminary investigation shows that two pedestrians were crossing mid-block in the 8100 block of N. Lamar Blvd. when both were struck by an unknown vehicle. One pedestrian had minor injuries and the other was pronounced deceased at the scene. The vehicle that hit them fled and has not been yet identified. ",
     "Time": "8:30 p.m."
+  },
+  {
+    "Age": 13,
+    "Case": "19-0400694",
+    "DOB": "12/05/2005",
+    "Date": "02/09/2019",
+    "Ethnicity": "Black",
+    "Fatal crashes this year": "7",
+    "First Name": "Zion",
+    "Gender": "male",
+    "Last Name": "Mouton",
+    "Link": "http://austintexas.gov/news/traffic-fatality-7-4",
+    "Location": "6000 block of Springdale Road",
+    "Notes": "The preliminary investigation shows that the driver of a 1997, red BMW was traveling northbound in the 6000 block of Springdale Road and lost control. The vehicle skidded sideways before flipping and striking a utility pole. The passenger in the vehicle, Messiah Zion Mouton, was pronounced deceased at the scene.",
+    "Time": "12:48 p.m."
   }
 ]

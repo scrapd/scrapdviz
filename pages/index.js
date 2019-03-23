@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdEthnicityGraph from '../components/scrapd-ethnicity-graph';
 import ScrapdGenderGraph from '../components/scrapd-gender-graph';
+import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
 
 const { Content, Footer, Header } = Layout;
 
@@ -20,6 +21,7 @@ const Index = () => (
             <ScrapdGrid />
             <ScrapdEthnicityGraph />
             <ScrapdGenderGraph />
+            <ScrapdFatalityCounter />
           </div>
         </Content>
       </Layout>
