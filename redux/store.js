@@ -24,12 +24,14 @@ const initialState = {
 export const actionTypes = {
   FETCH_DATA: 'FETCH_DATA',
   FETCH_DATA_ASYNC: 'FETCH_DATA_ASYNC',
+  SELECT_DATE: 'SELECT_DATE'
 }
 
 // Define reducers.
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_DATA:
+    case actionTypes.SELECT_DATE:
       return {
         ...state, ...action.payload
       }
@@ -47,6 +49,11 @@ export const fetchData = (fatalities) => ({
 
 export const fetchDataAsync = (date_filter) => ({
   type: actionTypes.FETCH_DATA_ASYNC,
+  payload: { date_filter }
+});
+
+export const selectDate = (date_filter) => ({
+  type: actionTypes.SELECT_DATE,
   payload: { date_filter }
 });
 
