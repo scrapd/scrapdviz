@@ -1,6 +1,7 @@
 import { Layout } from 'antd';
 import { connect } from 'react-redux';
 import ScrapdGrid from '../components/scrapd-grid';
+import ScrapdEthinicityGraph from '../components/scrapd-ethnicity-graph';
 
 const { Content, Footer, Header } = Layout;
 
@@ -16,6 +17,7 @@ const Index = () => (
           <div style={{ padding: 24, background: '#fff', minHeight: '80vh' }}>
             <h1>Explore the data</h1>
             <ScrapdGrid />
+            <ScrapdEthinicityGraph />
           </div>
         </Content>
       </Layout>
