@@ -16,11 +16,14 @@ const bindMiddleware = (middleware) => {
 
 // Define the initial state of the store .
 const initialState = {
+  date_filter: {},
+  fatalities: []
 }
 
 // Define the redux action types.
 export const actionTypes = {
   FETCH_DATA: 'FETCH_DATA',
+  FETCH_DATA_ASYNC: 'FETCH_DATA_ASYNC',
 }
 
 // Define reducers.
@@ -37,9 +40,14 @@ export const reducer = (state = initialState, action) => {
 }
 
 // Define actions.
-export const fetchData = (data) => ({
-  type: actionTypes.FETCH_PLACES,
-  payload: { data }
+export const fetchData = (fatalities) => ({
+  type: actionTypes.FETCH_DATA,
+  payload: { fatalities }
+});
+
+export const fetchDataAsync = (date_filter) => ({
+  type: actionTypes.FETCH_DATA_ASYNC,
+  payload: { date_filter }
 });
 
 // Initialize store.
