@@ -8,7 +8,6 @@ function* watchFetchDataAsync() {
 }
 
 function* workerFetchDataAsync(action) {
-  debugger;
   const { from_, to } = action.payload.date_filter;
   yield delay(1000)
   yield put(fetchData(fatalities));
