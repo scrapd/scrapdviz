@@ -3,19 +3,16 @@ import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 import { RadialChart } from 'react-vis';
 
-const ScrapdEthnicityGraph = props => {
+const ScrapdGenderGraph = props => {
   // The data should come directly from the API.
-  // const ethnicityData = [{ angle: 1, label: 'Black' }, { angle: 6, label: 'White' }, { angle: 3, label: 'Hispanic' }]
-  // const ethnicityData = [{ angle: 1, radius: 10 }, { angle: 2, label: 'Super Custom label', subLabel: 'With annotation', radius: 20 }, { angle: 5, radius: 5, label: 'Alt Label' }, { angle: 3, radius: 14 }, { angle: 5, radius: 12, subLabel: 'Sub Label only', className: 'custom-class' }];
-
   let datamap = new Object();
   for (var i = 0; i < props.fatalities.length; i++) {
-    let ethnicity = props.fatalities[i]['Ethnicity'];
-    if (datamap[ethnicity] === undefined) {
-      datamap[ethnicity] = 1;
+    let gender = props.fatalities[i]['Gender'];
+    if (datamap[gender] === undefined) {
+      datamap[gender] = 1;
     } else {
-      let ethnicitycount = datamap[ethnicity];
-      datamap[ethnicity] = ethnicitycount + 1;
+      let genderCount = datamap[gender];
+      datamap[gender] = genderCount + 1;
     }
   }
 
@@ -42,12 +39,12 @@ const ScrapdEthnicityGraph = props => {
   return (
     <Graph>
       <RadialChart data={data} width={300} height={300} showLabels={true} labelsStyle={{ backgroundColor: 'gray' }} />
-      <GraphTitle>Ethnicity distribution</GraphTitle>
+      <GraphTitle>Gender distribution</GraphTitle>
     </Graph>
   );
 };
 
-ScrapdEthnicityGraph.propTypes = {
+ScrapdGenderGraph.propTypes = {
   fatalities: Proptypes.array
 };
 
@@ -56,4 +53,4 @@ const mapStateToProps = state => {
   return { fatalities };
 };
 
-export default connect(mapStateToProps)(ScrapdEthnicityGraph);
+export default connect(mapStateToProps)(ScrapdGenderGraph);
