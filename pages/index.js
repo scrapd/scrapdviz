@@ -4,6 +4,7 @@ import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdEthnicityGraph from '../components/scrapd-ethnicity-graph';
 import ScrapdGenderGraph from '../components/scrapd-gender-graph';
 import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
+import ScrapdAgeGraph from '../components/scrapd-age-graph';
 
 const { Content, Footer, Header } = Layout;
 
@@ -21,6 +22,7 @@ const Index = () => (
             <ScrapdGrid />
             <ScrapdEthnicityGraph />
             <ScrapdGenderGraph />
+            <ScrapdAgeGraph />
             <ScrapdFatalityCounter />
           </div>
         </Content>
