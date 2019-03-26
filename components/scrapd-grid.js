@@ -55,7 +55,6 @@ class ScrapdGrid extends React.Component {
           }}
           onChange={this.onChange}
         />
-        <div>Number of fatalities for this period: {this.props.fatalities.length}</div>
         <Table columns={this.columns} dataSource={this.props.fatalities} />
       </div>
     );
