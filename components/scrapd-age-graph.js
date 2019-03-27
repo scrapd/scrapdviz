@@ -72,7 +72,8 @@ const ScrapdAgeGraph = props => {
     display: 'inline-block',
     borderRadius: '5px',
     border: '1px solid',
-    textAlign: 'center'
+    textAlign: 'center',
+    margin: '2em 0'
   });
 
   const GraphTitle = styled.p({
