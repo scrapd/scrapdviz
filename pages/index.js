@@ -1,12 +1,22 @@
-import { Layout } from 'antd';
 import { connect } from 'react-redux';
+import { Layout } from 'antd';
+import styled from '@emotion/styled';
 import ScrapdGrid from '../components/scrapd-grid';
-import ScrapdEthnicityGraph from '../components/scrapd-ethnicity-graph';
 import ScrapdGenderGraph from '../components/scrapd-gender-graph';
 import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
+import ScrapdEthnicityGraph from '../components/scrapd-ethnicity-graph';
 import ScrapdAgeGraph from '../components/scrapd-age-graph';
 
 const { Content, Footer, Header } = Layout;
+
+const GraphArea = styled.div({
+  display: 'inline-flex',
+  width: '100%',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
+  alignContent: 'space-between'
+});
 
 const Index = () => (
   <div>
@@ -20,10 +30,12 @@ const Index = () => (
           <div style={{ padding: 24, background: '#fff', minHeight: '80vh' }}>
             <h1>Explore the data</h1>
             <ScrapdGrid />
-            <ScrapdEthnicityGraph />
-            <ScrapdGenderGraph />
-            <ScrapdAgeGraph />
-            <ScrapdFatalityCounter />
+            <GraphArea>
+              <ScrapdEthnicityGraph />
+              <ScrapdGenderGraph />
+              <ScrapdAgeGraph />
+              <ScrapdFatalityCounter />
+            </GraphArea>
           </div>
         </Content>
       </Layout>
