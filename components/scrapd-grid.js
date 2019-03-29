@@ -43,7 +43,7 @@ class ScrapdGrid extends React.Component {
       <div>
         <RangePicker
           ranges={{
-            'Previous month': [
+            'Last month': [
               moment()
                 .subtract(1, 'months')
                 .startOf('month'),
@@ -51,7 +51,16 @@ class ScrapdGrid extends React.Component {
                 .subtract(1, 'months')
                 .endOf('month')
             ],
-            'This Month': [moment().startOf('month'), moment().endOf('month')]
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last year': [
+              moment()
+                .subtract(1, 'year')
+                .startOf('year'),
+              moment()
+                .subtract(1, 'year')
+                .endOf('year')
+            ],
+            'This year': [moment().startOf('year'), moment().endOf('year')]
           }}
           onChange={this.onChange}
         />
