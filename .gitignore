@@ -3,4 +3,6 @@
 bower_components/
 build/
 node_modules/
+out/
+static/workbox/
 src/config-dev.js
