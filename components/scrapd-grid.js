@@ -30,6 +30,12 @@ class ScrapdGrid extends React.Component {
     ];
   }
 
+  componentDidMount() {
+    const dateFilter = this.props.date_filter;
+    this.props.fetchDataAsync(dateFilter);
+    this.props.selectDate(dateFilter);
+  }
+
   onChange(dates, dateStrings) {
     console.log('From: ', dates[0], ', to: ', dates[1]);
     console.log('From: ', dateStrings[0], ', to: ', dateStrings[1]);
@@ -73,6 +79,7 @@ class ScrapdGrid extends React.Component {
 ScrapdGrid.propTypes = {
   fetchDataAsync: PropTypes.func.isRequired,
   selectDate: PropTypes.func.isRequired,
+  date_filter: PropTypes.array,
   fatalities: PropTypes.array
 };
 

@@ -1,6 +1,6 @@
 import createSagaMiddleware from 'redux-saga'
 import { createStore, applyMiddleware } from 'redux';
-
+import moment from 'moment';
 import rootSaga from './saga'
 
 const sagaMiddleware = createSagaMiddleware()
@@ -16,7 +16,7 @@ const bindMiddleware = (middleware) => {
 
 // Define the initial state of the store .
 const initialState = {
-  date_filter: {},
+  date_filter: { from_: moment().startOf('month'), to: moment().endOf('month') },
   fatalities: []
 }
 
