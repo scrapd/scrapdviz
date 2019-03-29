@@ -1,11 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import moment from 'moment';
+import facepaint from 'facepaint';
+import styled from '@emotion/styled';
 import { DatePicker, Table } from 'antd';
 import { connect } from 'react-redux';
 import { fetchDataAsync, selectDate } from '../redux/store';
 
 const RangePicker = DatePicker.RangePicker;
+
+// Define responsive options.
+const breakpoints = [1048];
+const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`));
+
+const TableDiv = styled.div(
+  mq({
+    display: ['none', 'block']
+  })
+);
 
 class ScrapdGrid extends React.Component {
   constructor(props) {
@@ -70,7 +82,9 @@ class ScrapdGrid extends React.Component {
           }}
           onChange={this.onChange}
         />
-        <Table columns={this.columns} dataSource={this.props.fatalities} />
+        <TableDiv>
+          <Table columns={this.columns} dataSource={this.props.fatalities} />
+        </TableDiv>
       </div>
     );
   }
