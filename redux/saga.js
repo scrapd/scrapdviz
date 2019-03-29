@@ -1,7 +1,9 @@
 import moment from 'moment';
-import { all, delay, put, takeLatest } from 'redux-saga/effects'
+import { all, call, delay, put, takeLatest } from 'redux-saga/effects'
 import { actionTypes, fetchData } from './store'
-import { fatalities } from '../mock-api/mock-data'
+
+// Use this for mocking only.
+// import { fatalities } from '../mock-api/mock-data'
 
 function isInRange(date, from_, to) {
   const d = moment(date);
@@ -31,8 +33,11 @@ function* watchFetchDataAsync() {
 
 function* workerFetchDataAsync(action) {
   const { from_, to } = action.payload.date_filter;
+  const endpoint = 'https://raw.githubusercontent.com/scrapd/datasets/master/datasets/fatalities-all-raw.json';
+  const response = yield call(fetch, endpoint);
+  const fatalities = yield call([response, "json"]);
   const f = filterFatalities(fatalities, from_, to);
-  yield delay(1000)
+  // yield delay(1000)
   yield put(fetchData(f));
 }
 
