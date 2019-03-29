@@ -14,8 +14,8 @@ const GraphArea = styled.div({
   width: '100%',
   flexDirection: 'row',
   flexWrap: 'wrap',
-  justifyContent: 'space-between',
-  alignContent: 'space-between'
+  justifyContent: 'space-around',
+  alignContent: 'space-around'
 });
 
 const Index = () => (
