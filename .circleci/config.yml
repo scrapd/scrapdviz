@@ -43,8 +43,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - attach_workspace:
-          at: *working_directory
+      - *restore_repo
       - add_ssh_keys:
           fingerprints:
             - "cd:d4:d3:94:c0:00:2b:6f:ed:02:33:15:1f:89:bc:d4"
