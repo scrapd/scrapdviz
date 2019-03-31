@@ -50,4 +50,4 @@ Place the URL of the issue here if this PR fixes an existing issue.
 Use either the *FULL* URL (preferred) or the `Username/Repository#`
 syntax.
 -->
-Fixes rgreinho/scrapdviz#
+Fixes scrapd/scrapdviz#

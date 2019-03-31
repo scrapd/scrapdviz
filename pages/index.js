@@ -18,11 +18,18 @@ const GraphArea = styled.div({
   alignContent: 'space-around'
 });
 
+const Logo = styled.img({
+  display: 'inline-block',
+  height: '2em',
+  background: 'rgba(255, 255, 255, 0.2)',
+  margin: '1em'
+});
+
 const Index = () => (
   <div>
     <Layout>
       <Header style={{ background: '#fff', padding: 0 }}>
-        <img className="logo" src="/static/images/logos/scrapd-logo-128x152.png" alt="RYR logo" />
+        <Logo src="/static/images/logos/scrapd-logo-128x152.png" alt="RYR logo" />
         ScrAPDviz
       </Header>
       <Layout>
@@ -41,26 +48,6 @@ const Index = () => (
       </Layout>
       <Footer style={{ textAlign: 'center' }}>ScrAPDviz powered by Ant Design</Footer>
     </Layout>
-    <style jsx>
-      {`
-        h1 {
-          color: #3d74fc;
-          display: inline-block;
-          margin-left: 10px;
-        }
-
-        .logo {
-          display: inline-block;
-          height: 32px;
-          background: rgba(255, 255, 255, 0.2);
-          margin: 16px;
-        }
-
-        .navbar > * {
-          vertical-align: middle;
-        }
-      `}
-    </style>
   </div>
 );
 
