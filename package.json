@@ -14,7 +14,7 @@
     "fix:javascript": "eslint --ext js,html --fix pages components",
     "lint": "run-s lint:*",
     "lint:javascript": "eslint --ext js,html pages components",
-    "ship": "run-s dump && git worktree add out gh-pages && cd out && git add --all && git commit -m \"Deploy to gh-pages\" && git push origin gh-pages",
+    "ship": "run-s dump && cd out && git add . && git commit -m \"Deploy to gh-pages\" && git push origin gh-pages",
     "start": "NODE_ENV=production node server.js",
     "test": "NODE_ENV=test jest"
   },
