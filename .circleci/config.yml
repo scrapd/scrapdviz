@@ -39,6 +39,24 @@ jobs:
       - *restore_repo
       - run: npm run test
 
+  publish:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: *working_directory
+      - add_ssh_keys:
+          fingerprints:
+            - "cd:d4:d3:94:c0:00:2b:6f:ed:02:33:15:1f:89:bc:d4"
+      - run:
+          name: Configure git
+          command: |
+            git config --global user.email "circleci@scrapd.org"
+            git config --global user.name "CircleCI"
+      - run:
+          name: Publish the app
+          command: npm run ship
+
 workflows:
   version: 2
   gates:
@@ -50,4 +68,12 @@ workflows:
       - test:
           requires:
             - prepare
+      - publish:
+          requires:
+            - test
+            - lint
+          filters:
+            branches:
+              only: master
+
 
