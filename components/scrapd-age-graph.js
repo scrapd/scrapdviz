@@ -10,48 +10,36 @@ function isBetween(x, min, max) {
 const ScrapdAgeGraph = props => {
   // The data should come directly from the API.
   let datamap = new Object();
-  datamap['00-09'] = 0;
-  datamap['10-19'] = 0;
-  datamap['20-29'] = 0;
-  datamap['30-39'] = 0;
-  datamap['40-49'] = 0;
-  datamap['50-59'] = 0;
-  datamap['60-69'] = 0;
-  datamap['70-79'] = 0;
-  datamap['80-89'] = 0;
-  datamap['90-99'] = 0;
+  datamap['00-14'] = 0;
+  datamap['15-24'] = 0;
+  datamap['25-34'] = 0;
+  datamap['35-44'] = 0;
+  datamap['45-54'] = 0;
+  datamap['55-64'] = 0;
+  datamap['65-99'] = 0;
   for (var i = 0; i < props.fatalities.length; i++) {
     let age = props.fatalities[i]['Age'];
-    if (isBetween(age, 0, 9)) {
-      let ageCount = datamap['00-09'];
-      datamap['00-9'] = ageCount + 1;
-    } else if (isBetween(age, 10, 19)) {
-      let ageCount = datamap['10-19'];
-      datamap['10-19'] = ageCount + 1;
-    } else if (isBetween(age, 20, 29)) {
-      let ageCount = datamap['20-29'];
-      datamap['20-29'] = ageCount + 1;
-    } else if (isBetween(age, 30, 39)) {
-      let ageCount = datamap['30-39'];
-      datamap['30-39'] = ageCount + 1;
-    } else if (isBetween(age, 40, 49)) {
-      let ageCount = datamap['40-49'];
-      datamap['40-49'] = ageCount + 1;
-    } else if (isBetween(age, 50, 59)) {
-      let ageCount = datamap['50-59'];
-      datamap['50-59'] = ageCount + 1;
-    } else if (isBetween(age, 60, 69)) {
-      let ageCount = datamap['60-69'];
-      datamap['60-69'] = ageCount + 1;
-    } else if (isBetween(age, 70, 79)) {
-      let ageCount = datamap['70-79'];
-      datamap['70-79'] = ageCount + 1;
-    } else if (isBetween(age, 80, 89)) {
-      let ageCount = datamap['80-89'];
-      datamap['80-89'] = ageCount + 1;
-    } else if (isBetween(age, 90, 99)) {
-      let ageCount = datamap['90-99'];
-      datamap['90-99'] = ageCount + 1;
+    if (isBetween(age, 0, 14)) {
+      let ageCount = datamap['00-14'];
+      datamap['00-14'] = ageCount + 1;
+    } else if (isBetween(age, 15, 24)) {
+      let ageCount = datamap['15-24'];
+      datamap['15-24'] = ageCount + 1;
+    } else if (isBetween(age, 25, 34)) {
+      let ageCount = datamap['25-34'];
+      datamap['25-34'] = ageCount + 1;
+    } else if (isBetween(age, 35, 44)) {
+      let ageCount = datamap['35-44'];
+      datamap['35-44'] = ageCount + 1;
+    } else if (isBetween(age, 45, 54)) {
+      let ageCount = datamap['45-54'];
+      datamap['45-54'] = ageCount + 1;
+    } else if (isBetween(age, 55, 64)) {
+      let ageCount = datamap['55-64'];
+      datamap['55-64'] = ageCount + 1;
+    } else if (isBetween(age, 65, 99)) {
+      let ageCount = datamap['65-99'];
+      datamap['65-99'] = ageCount + 1;
     } else {
       continue;
     }
