@@ -93,7 +93,7 @@ class ScrapdGrid extends React.Component {
 ScrapdGrid.propTypes = {
   fetchDataAsync: PropTypes.func.isRequired,
   selectDate: PropTypes.func.isRequired,
-  date_filter: PropTypes.array,
+  date_filter: PropTypes.object,
   fatalities: PropTypes.array
 };
 
