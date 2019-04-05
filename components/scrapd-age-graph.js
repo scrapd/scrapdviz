@@ -53,6 +53,7 @@ const ScrapdAgeGraph = props => {
     let tmp = new Object();
     tmp.angle = datamap[key];
     tmp.label = key;
+    tmp.subLabel = Number((datamap[key] * 100) / props.fatalities.length).toFixed(0) + '%';
     data.push(tmp);
   }
 
@@ -71,7 +72,7 @@ const ScrapdAgeGraph = props => {
 
   return (
     <Graph>
-      <RadialChart data={data} width={300} height={300} showLabels={true} labelsStyle={{ backgroundColor: 'gray' }} />
+      <RadialChart data={data} width={300} height={300} showLabels={true} labelsRadiusMultiplier={1} />
       <GraphTitle>Age distribution</GraphTitle>
     </Graph>
   );

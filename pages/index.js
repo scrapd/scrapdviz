@@ -2,10 +2,9 @@ import { connect } from 'react-redux';
 import { Layout } from 'antd';
 import styled from '@emotion/styled';
 import ScrapdGrid from '../components/scrapd-grid';
-import ScrapdGenderGraph from '../components/scrapd-gender-graph';
 import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
-import ScrapdEthnicityGraph from '../components/scrapd-ethnicity-graph';
 import ScrapdAgeGraph from '../components/scrapd-age-graph';
+import ScrapdPieGraph from '../components/scrapd-pie-graph';
 
 const { Content, Footer, Header } = Layout;
 
@@ -38,8 +37,8 @@ const Index = () => (
             <h1>Explore the data</h1>
             <ScrapdGrid />
             <GraphArea>
-              <ScrapdEthnicityGraph />
-              <ScrapdGenderGraph />
+              <ScrapdPieGraph attribute="Gender" />
+              <ScrapdPieGraph attribute="Ethnicity" />
               <ScrapdAgeGraph />
               <ScrapdFatalityCounter />
             </GraphArea>
