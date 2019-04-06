@@ -44,9 +44,7 @@ const ScrapdAgeGraph = props => {
     }
   }
 
-  return (
-    <ScrapdGenericPieChart groupedItems={datamap} itemCount={props.fatalities.length} attribute={props.attribute} />
-  );
+  return <ScrapdGenericPieChart groupedItems={datamap} itemCount={props.fatalities.length} attribute="Age" />;
 };
 
 ScrapdAgeGraph.propTypes = {
