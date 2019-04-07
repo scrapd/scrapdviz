@@ -29,8 +29,20 @@ class ScrapdGrid extends React.Component {
     };
     this.columns = [
       { title: 'Case', dataIndex: 'Case', key: 'Case' },
-      { title: 'Crash', dataIndex: 'Fatal crashes this year', key: 'Fatal crashes this year' },
-      { title: 'Date', dataIndex: 'Date', key: 'Date' },
+      {
+        title: 'Crash',
+        dataIndex: 'Fatal crashes this year',
+        key: 'Fatal crashes this year',
+        sortDirections: ['descend'],
+        sorter: (a, b) => a['Fatal crashes this year'] - b['Fatal crashes this year']
+      },
+      {
+        title: 'Date',
+        dataIndex: 'Date',
+        key: 'Date',
+        defaultSortOrder: 'descend',
+        sorter: (a, b) => new moment(a.Date) - new moment(b.Date)
+      },
       { title: 'Time', dataIndex: 'Time', key: 'Time' },
       { title: 'Location', dataIndex: 'Location', key: 'Location' },
       { title: 'First Name', dataIndex: 'First Name', key: 'First Name' },
