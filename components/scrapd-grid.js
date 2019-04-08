@@ -93,6 +93,7 @@ class ScrapdGrid extends React.Component {
             'This year': [moment().startOf('year'), moment().endOf('year')]
           }}
           onChange={this.onChange}
+          defaultValue={[moment(this.props.date_filter.from_), moment(this.props.date_filter.to)]}
         />
         <TableDiv>
           <Table columns={this.columns} dataSource={this.props.fatalities} />
