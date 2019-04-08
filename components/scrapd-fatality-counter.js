@@ -27,7 +27,7 @@ const ScrapdFatalityCounter = props => {
     width: '400px',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: fatalityCount > 99 ? '12rem' : '16rem'
+    fontSize: fatalityCount > 99 ? '14rem' : '20rem'
   });
 
   const GraphTitle = styled.p({

@@ -16,6 +16,8 @@ const ScrapdAgeGraph = props => {
   datamap['45-54'] = 0;
   datamap['55-64'] = 0;
   datamap['65-99'] = 0;
+  datamap['undefined'] = 0;
+
   for (var i = 0; i < props.fatalities.length; i++) {
     let age = props.fatalities[i]['Age'];
     if (isBetween(age, 0, 14)) {
@@ -40,7 +42,8 @@ const ScrapdAgeGraph = props => {
       let ageCount = datamap['65-99'];
       datamap['65-99'] = ageCount + 1;
     } else {
-      continue;
+      let ageCount = datamap['undefined'];
+      datamap['undefined'] = ageCount + 1;
     }
   }
 
