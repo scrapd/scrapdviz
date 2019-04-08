@@ -6,6 +6,9 @@ const ScrapdPieGraph = props => {
   let datamap = new Object();
   for (var i = 0; i < props.fatalities.length; i++) {
     let attr = props.fatalities[i][props.attribute];
+    if (attr !== undefined) {
+      attr = attr.toLowerCase();
+    }
     if (datamap[attr] === undefined) {
       datamap[attr] = 1;
     } else {
