@@ -3,21 +3,18 @@ const NextWorkboxPlugin = require('next-workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
+// fix: prevents error when .css files are required by node
+if (typeof require !== 'undefined') {
+  require.extensions['.css'] = file => { }
+}
+
+// module.exports = withCSS()
 module.exports = withCSS({
   webpack(config, { isServer, buildId, dev }) {
     // Fixes npm packages that depend on `fs` module
     config.node = {
       fs: 'empty',
     };
-
-    if (!isServer) {
-      config.module.rules.find(({ test }) => test.test('style.css')).use.push({
-        loader: 'css-purify-webpack-loader',
-        options: {
-          includes: ['./pages/*.js', './components/*.js'],
-        },
-      });
-    }
 
     const workboxOptions = {
       clientsClaim: true,

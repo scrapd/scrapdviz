@@ -1,6 +1,6 @@
 {
   "name": "scrapdviz",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Visualize Austin traffic fatalities from another angle",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "lint:javascript": "eslint --ext js,html pages components",
     "ship": "run-s dump && ./tools/deploy.sh",
     "start": "NODE_ENV=production node server.js",
-    "test": "NODE_ENV=test jest"
+    "test": "echo \"Removed until they are meaningful\""
   },
   "repository": {
     "type": "git",
@@ -38,11 +38,12 @@
     "@emotion/styled": "^10.0.7",
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.13.6",
+    "babel-plugin-import": "^1.11.0",
     "express": "^4.16.4",
     "facepaint": "^1.2.1",
     "lru-cache": "^5.1.1",
     "moment": "^2.24.0",
-    "next": "^8.0.3",
+    "next": "^7.0.3",
     "next-redux-wrapper": "^3.0.0-alpha.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -58,7 +59,6 @@
     "babel-jest": "^24.1.0",
     "babel-plugin-css-modules-transform": "^1.6.2",
     "babel-plugin-dynamic-import-node": "^2.2.0",
-    "babel-plugin-import": "^1.11.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "css-purify-webpack-loader": "^1.0.1",
     "enzyme": "^3.9.0",
@@ -66,6 +66,7 @@
     "eslint": "^5.15.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.0.1",
@@ -82,59 +83,21 @@
     "webpack-pwa-manifest": "^4.0.0"
   },
   "babel": {
-    "env": {
-      "development": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          [
-            "emotion",
-            {
-              "sourceMap": true
-            }
-          ],
-          [
-            "import",
-            {
-              "libraryName": "antd",
-              "style": "css"
-            }
-          ],
-          "css-modules-transform"
-        ]
-      },
-      "production": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          "css-modules-transform",
-          "emotion"
-        ]
-      },
-      "test": {
-        "presets": [
-          "next/babel"
-        ],
-        "plugins": [
-          "css-modules-transform",
-          [
-            "emotion",
-            {
-              "sourceMap": true
-            }
-          ],
-          [
-            "import",
-            {
-              "libraryName": "antd",
-              "style": "true"
-            }
-          ]
-        ]
-      }
-    }
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "style": "css"
+        }
+      ],
+      [
+        "emotion"
+      ]
+    ]
   },
   "eslintConfig": {
     "env": {
