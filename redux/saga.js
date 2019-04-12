@@ -33,7 +33,7 @@ function* watchFetchDataAsync() {
 
 function* workerFetchDataAsync(action) {
   const { from_, to } = action.payload.date_filter;
-  const endpoint = 'https://raw.githubusercontent.com/scrapd/datasets/master/datasets/fatalities-all-raw.json';
+  const endpoint = 'https://raw.githubusercontent.com/scrapd/datasets/master/datasets/fatalities-all-augmented.json';
   const response = yield call(fetch, endpoint);
   const fatalities = yield call([response, "json"]);
   const f = filterFatalities(fatalities, from_, to);

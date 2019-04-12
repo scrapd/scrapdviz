@@ -54,7 +54,10 @@ jobs:
             git config --global user.name "CircleCI"
       - run:
           name: Publish the app
-          command: npm run ship
+          command: |
+            sudo apt-get update -qq
+            sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends python3-pip
+            npm run ship
 
 workflows:
   version: 2
