@@ -11,8 +11,4 @@ if [ -z "${HAS_CHANGE}" ]; then
 fi
 
 # If there are any, deploy them.
-cd "${TOPDIR}/out" || exit
-git add .
-git commit -m "Deploy to gh-pages"
-git push origin gh-pages
-cd -
+ghp-import -n -p -f -c viz.scrapd.org -m "Publish $(git describe)" out

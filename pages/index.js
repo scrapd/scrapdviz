@@ -5,8 +5,13 @@ import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
 import ScrapdAgeGraph from '../components/scrapd-age-graph';
 import ScrapdPieGraph from '../components/scrapd-pie-graph';
+import dynamic from 'next/dynamic';
 
 const { Content, Footer, Header } = Layout;
+const ScrapdMap = dynamic(() => import('../components/scrapd-map'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false
+});
 
 const GraphArea = styled.div({
   display: 'inline-flex',
@@ -41,6 +46,7 @@ const Index = () => (
               <ScrapdPieGraph attribute="Ethnicity" />
               <ScrapdAgeGraph />
               <ScrapdFatalityCounter />
+              <ScrapdMap />
             </GraphArea>
           </div>
         </Content>

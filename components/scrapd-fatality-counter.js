@@ -17,17 +17,17 @@ const ScrapdFatalityCounter = props => {
       border: '1px solid',
       textAlign: 'center',
       margin: '2em 0',
-      order: ['-1', '0']
+      order: ['-1', '0'],
+      height: '400px'
     })
   );
 
   const CountStyle = styled.div({
     display: 'flex',
-    height: '400px',
     width: '400px',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: fatalityCount > 99 ? '14rem' : '20rem'
+    fontSize: '14rem'
   });
 
   const GraphTitle = styled.p({
