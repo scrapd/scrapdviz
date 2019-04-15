@@ -3,9 +3,10 @@ import React from 'react';
 import moment from 'moment';
 import facepaint from 'facepaint';
 import styled from '@emotion/styled';
-import { DatePicker, Table } from 'antd';
+import { Button, DatePicker, message, Table } from 'antd';
 import { connect } from 'react-redux';
 import { fetchDataAsync, selectDate } from '../redux/store';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const RangePicker = DatePicker.RangePicker;
 
@@ -13,11 +14,40 @@ const RangePicker = DatePicker.RangePicker;
 const breakpoints = [1048];
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`));
 
+const ControlDiv = styled.div({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+  margin: '1em 0'
+});
+
+const ButtonDiv = styled.div({
+  // marginLeft: '0.5em',
+  marginRight: '0.5em'
+});
+
 const TableDiv = styled.div(
   mq({
     display: ['none', 'block']
   })
 );
+
+const success = () => {
+  message.success('Copied to clipoard');
+};
+
+const json2csv = items => {
+  if (!items || items.length == 0) {
+    return '';
+  }
+  const replacer = (key, value) => (value === null ? '' : value); // specify how you want to handle null values here
+  const header = Object.keys(items[0]);
+  let csv = items.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
+  csv.unshift(header.join(','));
+  csv = csv.join('\n');
+  return csv;
+};
 
 class ScrapdGrid extends React.Component {
   constructor(props) {
@@ -71,30 +101,48 @@ class ScrapdGrid extends React.Component {
   render() {
     return (
       <div>
-        <RangePicker
-          ranges={{
-            'Last month': [
-              moment()
-                .subtract(1, 'months')
-                .startOf('month'),
-              moment()
-                .subtract(1, 'months')
-                .endOf('month')
-            ],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last year': [
-              moment()
-                .subtract(1, 'year')
-                .startOf('year'),
-              moment()
-                .subtract(1, 'year')
-                .endOf('year')
-            ],
-            'This year': [moment().startOf('year'), moment().endOf('year')]
-          }}
-          onChange={this.onChange}
-          defaultValue={[moment(this.props.date_filter.from_), moment(this.props.date_filter.to)]}
-        />
+        <ControlDiv>
+          <ButtonDiv>
+            <RangePicker
+              ranges={{
+                'Last month': [
+                  moment()
+                    .subtract(1, 'months')
+                    .startOf('month'),
+                  moment()
+                    .subtract(1, 'months')
+                    .endOf('month')
+                ],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last year': [
+                  moment()
+                    .subtract(1, 'year')
+                    .startOf('year'),
+                  moment()
+                    .subtract(1, 'year')
+                    .endOf('year')
+                ],
+                'This year': [moment().startOf('year'), moment().endOf('year')]
+              }}
+              onChange={this.onChange}
+              defaultValue={[moment(this.props.date_filter.from_), moment(this.props.date_filter.to)]}
+            />
+          </ButtonDiv>
+          <ButtonDiv>
+            <CopyToClipboard text={json2csv(this.props.fatalities)}>
+              <Button type="primary" size="small" icon="copy" onClick={success}>
+                CSV
+              </Button>
+            </CopyToClipboard>
+          </ButtonDiv>
+          <ButtonDiv>
+            <CopyToClipboard text={JSON.stringify(this.props.fatalities)}>
+              <Button size="small" icon="copy" onClick={success}>
+                JSON
+              </Button>
+            </CopyToClipboard>
+          </ButtonDiv>
+        </ControlDiv>
         <TableDiv>
           <Table columns={this.columns} dataSource={this.props.fatalities} />
         </TableDiv>
