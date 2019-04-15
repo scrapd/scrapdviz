@@ -1,14 +1,14 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 # Define variables.
 TOPDIR=$(git rev-parse --show-toplevel)
 
-# Check for changes.
-HAS_CHANGE=$(git status -s)
-if [ -z "${HAS_CHANGE}" ]; then
-  exit
-fi
+# Ensure we are in the right folder.
+cd "${TOPDIR}" || exit 1
 
-# If there are any, deploy them.
-ghp-import -n -p -f -c viz.scrapd.org -m "Publish $(git describe)" out
+# Set the origin.
+ORIGIN=$([ -n "${CIRCLECI}" ] && echo "origin" || echo "upstream")
+
+# Deploy.
+ghp-import -n -p -f -c viz.scrapd.org -r "${ORIGIN}" -m "Publish $(git describe)" out
