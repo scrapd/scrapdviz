@@ -34,7 +34,7 @@ const TableDiv = styled.div(
 );
 
 const success = () => {
-  message.success('Copied to clipoard');
+  message.success('Copied to clipboard');
 };
 
 const json2csv = items => {
