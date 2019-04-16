@@ -56,7 +56,12 @@ jobs:
           name: Publish the app
           command: |
             sudo apt-get update -qq
-            sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends python3-pip
+            sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq --no-install-recommends \
+              python3-pip \
+              python3-setuptools \
+              python3-wheel
+            pip3 install ghp-import
+            export PATH=$PATH:/home/circleci/.local/bin
             npm run ship
 
 workflows:
