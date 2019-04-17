@@ -68,19 +68,30 @@ workflows:
   version: 2
   gates:
     jobs:
-      - prepare
+      - prepare:
+          filters:
+            tags:
+              only: /.*/
       - lint:
           requires:
             - prepare
+          filters:
+            tags:
+              only: /.*/
       - test:
           requires:
             - prepare
+          filters:
+            tags:
+              only: /.*/
       - publish:
           requires:
             - test
             - lint
           filters:
             branches:
-              only: master
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+$/
 
 
