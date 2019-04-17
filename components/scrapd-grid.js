@@ -122,7 +122,8 @@ class ScrapdGrid extends React.Component {
                     .subtract(1, 'year')
                     .endOf('year')
                 ],
-                'This year': [moment().startOf('year'), moment().endOf('year')]
+                'This year': [moment().startOf('year'), moment().endOf('year')],
+                all: [moment(new Date(1900, 0)), moment(new Date(2100, 0))]
               }}
               onChange={this.onChange}
               defaultValue={[moment(this.props.date_filter.from_), moment(this.props.date_filter.to)]}
