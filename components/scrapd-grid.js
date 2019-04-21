@@ -58,7 +58,16 @@ class ScrapdGrid extends React.Component {
       isLoaded: false
     };
     this.columns = [
-      { title: 'Case', dataIndex: 'Case', key: 'Case' },
+      {
+        title: 'Case',
+        dataIndex: 'Case',
+        key: 'Case',
+        render: (text, record) => (
+          <a target="_blank" rel="noopener noreferrer" href={record.Link}>
+            {text}
+          </a>
+        )
+      },
       {
         title: 'Crash',
         dataIndex: 'Fatal crashes this year',
@@ -145,7 +154,7 @@ class ScrapdGrid extends React.Component {
           </ButtonDiv>
         </ControlDiv>
         <TableDiv>
-          <Table columns={this.columns} dataSource={this.props.fatalities} />
+          <Table columns={this.columns} dataSource={this.props.fatalities} size="middle" />
         </TableDiv>
       </div>
     );
