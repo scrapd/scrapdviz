@@ -34,12 +34,11 @@ const Index = () => (
     <Layout>
       <Header style={{ background: '#fff', padding: 0 }}>
         <Logo src="/static/images/logos/scrapd-logo-128x152.png" alt="RYR logo" />
-        ScrAPDviz
+        ScrAPDviz - Explore the data
       </Header>
       <Layout>
         <Content style={{ margin: '24px 16px 0' }}>
           <div style={{ padding: 24, background: '#fff', minHeight: '80vh' }}>
-            <h1>Explore the data</h1>
             <ScrapdGrid />
             <GraphArea>
               <ScrapdPieGraph attribute="Gender" />
