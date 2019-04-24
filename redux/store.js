@@ -17,8 +17,8 @@ const bindMiddleware = (middleware) => {
 // Define the initial state of the store .
 const initialState = {
   date_filter: {
-    from_: moment().startOf('month').subtract(4, 'y'),
-    to: moment().endOf('month')
+    from_: moment().startOf('month').format('MM/DD/YYYY'),
+    to: moment().endOf('month').format('MM/DD/YYYY')
   },
   fatalities: []
 }

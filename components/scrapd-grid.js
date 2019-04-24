@@ -117,7 +117,8 @@ class ScrapdGrid extends React.Component {
                 'Last month': [
                   moment()
                     .subtract(1, 'months')
-                    .startOf('month'),
+                    .startOf('month')
+                    .format('MM/DD/YYYY'),
                   moment()
                     .subtract(1, 'months')
                     .endOf('month')
@@ -132,6 +133,30 @@ class ScrapdGrid extends React.Component {
                     .endOf('year')
                 ],
                 'This year': [moment().startOf('year'), moment().endOf('year')],
+                '2017': [
+                  moment()
+                    .startOf('year')
+                    .year(2017),
+                  moment()
+                    .endOf('year')
+                    .year(2017)
+                ],
+                '2018': [
+                  moment()
+                    .startOf('year')
+                    .year(2018),
+                  moment()
+                    .endOf('year')
+                    .year(2018)
+                ],
+                '2019': [
+                  moment()
+                    .startOf('year')
+                    .year(2019),
+                  moment()
+                    .endOf('year')
+                    .year(2019)
+                ],
                 all: [moment(new Date(1900, 0)), moment(new Date(2100, 0))]
               }}
               onChange={this.onChange}
