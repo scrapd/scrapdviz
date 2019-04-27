@@ -16,7 +16,7 @@
     "lint:javascript": "eslint --ext js,html pages components",
     "ship": "run-s dump && ./tools/deploy.sh",
     "start": "NODE_ENV=production node server.js",
-    "test": "echo \"Removed until they are meaningful\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -65,7 +65,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "css-purify-webpack-loader": "^1.0.1",
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.15.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": "^12.0.0",
@@ -90,6 +90,7 @@
       "next/babel"
     ],
     "plugins": [
+      "babel-plugin-dynamic-import-node",
       [
         "import",
         {
@@ -148,7 +149,11 @@
     "testPathIgnorePatterns": [
       "<rootDir>/.next/",
       "<rootDir>/node_modules/"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "prettier": {
     "printWidth": 120,
