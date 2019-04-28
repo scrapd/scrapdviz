@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { Layout } from 'antd';
+import { Row, Col, Icon, Layout } from 'antd';
 import styled from '@emotion/styled';
 import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
@@ -21,6 +21,18 @@ const GraphArea = styled.div({
   justifyContent: 'space-around',
   alignContent: 'space-around'
 });
+
+const FooterIconStyle = {
+  fontSize: '2em'
+};
+
+const FooterIconStyleLeft = {
+  margin: '0 0.5em 0 0'
+};
+
+const FooterIconStyleRight = {
+  margin: '0 0 0 0.5em'
+};
 
 const Logo = styled.img({
   display: 'inline-block',
@@ -50,7 +62,26 @@ const Index = () => (
           </div>
         </Content>
       </Layout>
-      <Footer style={{ textAlign: 'center' }}>ScrAPDviz powered by Ant Design</Footer>
+      <Footer>
+        <Row>
+          <Col style={{ textAlign: 'left' }} span={8}>
+            <a target="_blank" rel="noopener noreferrer" href="https://ant.design/">
+              <Icon type="ant-design" style={{ ...FooterIconStyle, ...FooterIconStyleLeft }} />
+            </a>
+          </Col>
+          <Col style={{ textAlign: 'center' }} span={8}>
+            ScrAPDviz powered by Ant Design
+          </Col>
+          <Col style={{ textAlign: 'right' }} span={8}>
+            <a target="_blank" rel="noopener noreferrer" href="mailto:info@scrapd.org">
+              <Icon type="mail" style={{ ...FooterIconStyle, ...FooterIconStyleRight }} />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/scrapd">
+              <Icon type="github" style={{ ...FooterIconStyle, ...FooterIconStyleRight }} />
+            </a>
+          </Col>
+        </Row>
+      </Footer>
     </Layout>
   </div>
 );

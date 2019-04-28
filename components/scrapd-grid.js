@@ -23,7 +23,6 @@ const ControlDiv = styled.div({
 });
 
 const ButtonDiv = styled.div({
-  // marginLeft: '0.5em',
   marginRight: '0.5em'
 });
 
