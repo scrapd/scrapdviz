@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
 import ScrapdAgeGraph from '../components/scrapd-age-graph';
+import ScrapdMonthGraph from '../components/scrapd-month-graph';
 import ScrapdPieGraph from '../components/scrapd-pie-graph';
 import dynamic from 'next/dynamic';
 
@@ -56,6 +57,7 @@ const Index = () => (
               <ScrapdPieGraph attribute="Gender" />
               <ScrapdPieGraph attribute="Ethnicity" />
               <ScrapdAgeGraph />
+              <ScrapdMonthGraph />
               <ScrapdFatalityCounter />
               <ScrapdMap />
             </GraphArea>
