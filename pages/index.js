@@ -1,12 +1,13 @@
-import { connect } from 'react-redux';
-import { Row, Col, Icon, Layout } from 'antd';
-import styled from '@emotion/styled';
-import ScrapdGrid from '../components/scrapd-grid';
-import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
 import ScrapdAgeGraph from '../components/scrapd-age-graph';
 import ScrapdMonthGraph from '../components/scrapd-month-graph';
+import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
+import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdPieGraph from '../components/scrapd-pie-graph';
+import ScrapdWeekdayGraph from '../components/scrapd-weekday-graph';
 import dynamic from 'next/dynamic';
+import styled from '@emotion/styled';
+import { Row, Col, Icon, Layout } from 'antd';
+import { connect } from 'react-redux';
 
 const { Content, Footer, Header } = Layout;
 const ScrapdMap = dynamic(() => import('../components/scrapd-map'), {
@@ -58,6 +59,7 @@ const Index = () => (
               <ScrapdPieGraph attribute="Ethnicity" />
               <ScrapdAgeGraph />
               <ScrapdMonthGraph />
+              <ScrapdWeekdayGraph />
               <ScrapdFatalityCounter />
               <ScrapdMap />
             </GraphArea>
