@@ -6,7 +6,7 @@ import { actionTypes, fetchData } from './store'
 // import { fatalities } from '../mock-api/mock-data'
 
 function isInRange(date, from_, to) {
-  const d = moment(date);
+  const d = moment(date, 'MM/DD/YYYY');
   if (d.isBefore(from_)) {
     return false;
   }

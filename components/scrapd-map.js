@@ -65,8 +65,8 @@ class ScrapdMap extends React.Component {
           zoom={[10]}
         >
           <Cluster ClusterMarkerFactory={clusterMarker}>
-            {this.props.fatalities.map((fatality, key) => (
-              <Marker key={key} style={markerStyle} coordinates={[fatality.Longitude, fatality.Latitude]}>
+            {this.props.fatalities.map(fatality => (
+              <Marker key={fatality.Case} style={markerStyle} coordinates={[fatality.Longitude, fatality.Latitude]}>
                 1
               </Marker>
             ))}

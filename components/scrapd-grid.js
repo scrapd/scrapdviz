@@ -98,9 +98,7 @@ class ScrapdGrid extends React.Component {
     this.props.selectDate(dateFilter);
   }
 
-  onChange(dates, dateStrings) {
-    console.log('From: ', dates[0], ', to: ', dates[1]);
-    console.log('From: ', dateStrings[0], ', to: ', dateStrings[1]);
+  onChange(dates) {
     let dateFilter = { from_: dates[0], to: dates[1] };
     this.props.fetchDataAsync(dateFilter);
     this.props.selectDate(dateFilter);
@@ -121,20 +119,15 @@ class ScrapdGrid extends React.Component {
                     .subtract(1, 'months')
                     .endOf('month')
                 ],
-                'This Month': [moment().startOf('month'), moment().endOf('month')],
-                'Last year': [
-                  moment()
-                    .subtract(1, 'year')
-                    .startOf('year'),
-                  moment()
-                    .subtract(1, 'year')
-                    .endOf('year')
-                ],
-                'This year': [moment().startOf('year'), moment().endOf('year')],
-                all: [moment(new Date(1900, 0)), moment(new Date(2100, 0))]
+                'This month': [moment().startOf('month'), moment().endOf('month')],
+                '2017': [moment('2017-01-01').startOf('year'), moment('2017-01-01').endOf('year')],
+                '2018': [moment('2018-01-01').startOf('year'), moment('2018-01-01').endOf('year')],
+                '2019': [moment('2019-01-01').startOf('year'), moment('2019-01-01').endOf('year')],
+                All: [moment('2015-01-01').startOf('year'), moment('2025-01-01').endOf('year')]
               }}
               onChange={this.onChange}
               defaultValue={[moment(this.props.date_filter.from_), moment(this.props.date_filter.to)]}
+              format="MM/DD/YYYY"
             />
           </ButtonDiv>
           <ButtonDiv>
