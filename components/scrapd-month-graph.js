@@ -44,8 +44,6 @@ const ScrapdMonthGraph = props => {
     datamap[monthOfYear] = datamap[monthOfYear] + 1;
   }
 
-  // return <div></div>
-
   return <ScrapdGenericBarChart groupedItems={datamap} itemCount={props.fatalities.length} attribute="Month" />;
 };
 

@@ -1,5 +1,5 @@
 import Proptypes from 'prop-types';
-import ScrapdGenericPieChart from './scrapd-generic-pie-chart';
+import ScrapdGenericBarChart from './scrapd-generic-bar-chart';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
@@ -22,7 +22,7 @@ const ScrapdWeekdayGraph = props => {
     datamap[dayOfWeek] = datamap[dayOfWeek] + 1;
   }
 
-  return <ScrapdGenericPieChart groupedItems={datamap} itemCount={props.fatalities.length} attribute="Weekday" />;
+  return <ScrapdGenericBarChart groupedItems={datamap} itemCount={props.fatalities.length} attribute="Weekday" />;
 };
 
 ScrapdWeekdayGraph.propTypes = {
