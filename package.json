@@ -16,7 +16,8 @@
     "lint:javascript": "eslint --ext js,html pages components",
     "ship": "run-s dump && ./tools/deploy.sh",
     "start": "NODE_ENV=production node server.js",
-    "test": "jest"
+    "test": "jest",
+    "test:update": "jest -u"
   },
   "repository": {
     "type": "git",
