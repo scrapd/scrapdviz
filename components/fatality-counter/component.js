@@ -1,7 +1,6 @@
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import facepaint from 'facepaint';
 import styled from '@emotion/styled';
-import { connect } from 'react-redux';
 
 // Define responsive options.
 const breakpoints = [1048];
@@ -44,12 +43,7 @@ const ScrapdFatalityCounter = props => {
 };
 
 ScrapdFatalityCounter.propTypes = {
-  fatalities: Proptypes.array
+  fatalities: PropTypes.array.isRequired
 };
 
-const mapStateToProps = state => {
-  const { fatalities } = state;
-  return { fatalities };
-};
-
-export default connect(mapStateToProps)(ScrapdFatalityCounter);
+export default ScrapdFatalityCounter;
