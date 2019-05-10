@@ -1,5 +1,5 @@
 import ScrapdAgeGraph from '../components/scrapd-age-graph';
-import ScrapdFatalityCounter from '../components/scrapd-fatality-counter';
+import ScrapdFatalityContainer from '../components/fatality-counter/container';
 import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdMonthGraph from '../components/scrapd-month-graph';
 import ScrapdPieGraph from '../components/scrapd-pie-graph';
@@ -62,7 +62,7 @@ const Index = () => (
               <ScrapdMonthGraph />
               <ScrapdWeekdayGraph />
               <ScrapdTimeGraph />
-              <ScrapdFatalityCounter />
+              <ScrapdFatalityContainer />
               <ScrapdMap />
             </GraphArea>
           </div>
