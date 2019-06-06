@@ -36,6 +36,25 @@ const success = () => {
   message.success('Copied to clipboard');
 };
 
+const download = (data, fileType) => {
+  var filename = 'scrapd_data';
+  var element = document.createElement('a');
+  var formattedText = formatData(data, fileType);
+  element.setAttribute('href', `data:text/${fileType};charset=utf-8,` + encodeURIComponent(formattedText));
+  element.setAttribute('download', `${filename}.${fileType}`);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+};
+
+const formatData = (data, fileType) => {
+  return fileType === 'json' ? JSON.stringify(data) : json2csv(data);
+};
+
 const json2csv = items => {
   if (!items || items.length == 0) {
     return '';
@@ -143,6 +162,16 @@ class ScrapdGrid extends React.Component {
                 JSON
               </Button>
             </CopyToClipboard>
+          </ButtonDiv>
+          <ButtonDiv>
+            <Button size="small" icon="download" onClick={() => download(this.props.fatalities, 'csv')}>
+              CSV
+            </Button>
+          </ButtonDiv>
+          <ButtonDiv>
+            <Button size="small" icon="download" onClick={() => download(this.props.fatalities, 'json')}>
+              JSON
+            </Button>
           </ButtonDiv>
         </ControlDiv>
         <TableDiv>
