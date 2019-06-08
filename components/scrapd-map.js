@@ -1,10 +1,10 @@
 import Proptypes from 'prop-types';
 import React from 'react';
-import { connect } from 'react-redux';
 import ReactMapboxGl from 'react-mapbox-gl';
-import { fetchDataAsync, selectDate } from '../redux/store';
 import styled from '@emotion/styled';
 import { Cluster, Marker } from 'react-mapbox-gl';
+import { connect } from 'react-redux';
+import { fetchDataAsync, selectDate } from '../redux/store';
 
 const Map = ReactMapboxGl({
   accessToken: 'pk.eyJ1IjoicmdyZWluaG9mZXIiLCJhIjoiY2pwMWt1aGxwMDI0czNrbGJmN2JxaDdsdSJ9.B84ADcgppQIggUtHv4C3UQ',

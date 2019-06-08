@@ -1,6 +1,6 @@
 import Proptypes from 'prop-types';
-import { connect } from 'react-redux';
 import ScrapdGenericPieChart from './scrapd-generic-pie-chart';
+import { connect } from 'react-redux';
 
 function isBetween(x, min, max) {
   return x >= min && x <= max;

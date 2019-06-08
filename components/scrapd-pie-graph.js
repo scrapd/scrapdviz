@@ -1,6 +1,6 @@
 import Proptypes from 'prop-types';
-import { connect } from 'react-redux';
 import ScrapdGenericPieChart from './scrapd-generic-pie-chart';
+import { connect } from 'react-redux';
 
 const ScrapdPieGraph = props => {
   let datamap = new Object();
