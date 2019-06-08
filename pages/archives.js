@@ -4,6 +4,7 @@ import ScrapdLayout from '../components/layout';
 import ScrapdMonthGraph from '../components/scrapd-month-graph';
 import ScrapdTimeGraph from '../components/scrapd-time-graph';
 import ScrapdWeekdayGraph from '../components/scrapd-weekday-graph';
+import ScrapdYearGraph from '../components/scrapd-year-graph';
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import { connect } from 'react-redux';
@@ -26,6 +27,7 @@ const Archives = () => (
   <ScrapdLayout>
     <ScrapdControls />
     <GraphArea>
+      <ScrapdYearGraph />
       <ScrapdMonthGraph />
       <ScrapdWeekdayGraph />
       <ScrapdTimeGraph />
