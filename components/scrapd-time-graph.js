@@ -1,7 +1,7 @@
 import Proptypes from 'prop-types';
-import { connect } from 'react-redux';
 import ScrapdGenericPieChart from './scrapd-generic-pie-chart';
 import moment from 'moment';
+import { connect } from 'react-redux';
 
 const ScrapdTimeGraph = props => {
   // The data should come directly from the API.

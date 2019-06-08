@@ -1,10 +1,9 @@
 import App, { Container } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
+import ServiceWorker from '../components/service-worker';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
-
-import ServiceWorker from '../components/service-worker';
 import { initializeStore } from '../redux/store';
 
 class CustomApp extends App {

@@ -1,10 +1,7 @@
-import ScrapdAgeGraph from '../components/scrapd-age-graph';
 import ScrapdControls from '../components/scrapd-controls';
 import ScrapdFatalityContainer from '../components/fatality-counter/container';
-import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdLayout from '../components/layout';
 import ScrapdMonthGraph from '../components/scrapd-month-graph';
-import ScrapdPieGraph from '../components/scrapd-pie-graph';
 import ScrapdTimeGraph from '../components/scrapd-time-graph';
 import ScrapdWeekdayGraph from '../components/scrapd-weekday-graph';
 import dynamic from 'next/dynamic';
@@ -25,14 +22,10 @@ const GraphArea = styled.div({
   alignContent: 'space-around'
 });
 
-const Index = () => (
+const Archives = () => (
   <ScrapdLayout>
     <ScrapdControls />
-    <ScrapdGrid />
     <GraphArea>
-      <ScrapdPieGraph attribute="Gender" />
-      <ScrapdPieGraph attribute="Ethnicity" />
-      <ScrapdAgeGraph />
       <ScrapdMonthGraph />
       <ScrapdWeekdayGraph />
       <ScrapdTimeGraph />
@@ -42,4 +35,4 @@ const Index = () => (
   </ScrapdLayout>
 );
 
-export default connect()(Index);
+export default connect()(Archives);
