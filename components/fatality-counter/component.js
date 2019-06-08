@@ -30,14 +30,14 @@ const ScrapdFatalityCounter = props => {
   });
 
   const GraphTitle = styled.p({
-    fontSize: '2em',
+    fontSize: '3em',
     textAlign: 'center'
   });
 
   return (
     <CounterDiv>
       <CountStyle>{fatalityCount}</CountStyle>
-      <GraphTitle>Fatalities</GraphTitle>
+      <GraphTitle>Crashes</GraphTitle>
     </CounterDiv>
   );
 };
