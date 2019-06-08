@@ -2,6 +2,7 @@ import ScrapdControls from '../components/scrapd-controls';
 import ScrapdFatalityContainer from '../components/fatality-counter/container';
 import ScrapdLayout from '../components/layout';
 import ScrapdMonthGraph from '../components/scrapd-month-graph';
+import ScrapdPieGraph from '../components/scrapd-pie-graph';
 import ScrapdTimeGraph from '../components/scrapd-time-graph';
 import ScrapdWeekdayGraph from '../components/scrapd-weekday-graph';
 import ScrapdYearGraph from '../components/scrapd-year-graph';
@@ -31,6 +32,7 @@ const Archives = () => (
       <ScrapdMonthGraph />
       <ScrapdWeekdayGraph />
       <ScrapdTimeGraph />
+      <ScrapdPieGraph attribute="Type" />
       <ScrapdFatalityContainer />
       <ScrapdMap />
     </GraphArea>
