@@ -1,3 +1,4 @@
+import ScrapdCauseGraph from '../components/scrapd-cause-graph';
 import ScrapdControls from '../components/scrapd-controls';
 import ScrapdFatalityContainer from '../components/fatality-counter/container';
 import ScrapdLayout from '../components/layout';
@@ -32,6 +33,7 @@ const Archives = () => (
       <ScrapdMonthGraph />
       <ScrapdWeekdayGraph />
       <ScrapdTimeGraph />
+      <ScrapdCauseGraph />
       <ScrapdPieGraph attribute="Type" />
       <ScrapdFatalityContainer />
       <ScrapdMap />
