@@ -17,9 +17,9 @@ exports[`Fatality counter component Renders properly with empty fatalities 1`] =
       </CountStyle>
       <GraphTitle>
         <p
-          className="css-1bsj346-GraphTitle e1567l2h2"
+          className="css-1tsnilr-GraphTitle e1567l2h2"
         >
-          Fatalities
+          Crashes
         </p>
       </GraphTitle>
     </div>
@@ -2035,9 +2035,9 @@ exports[`Fatality counter component Renders properly with greater than 0 fatalit
       </CountStyle>
       <GraphTitle>
         <p
-          className="css-1bsj346-GraphTitle e1567l2h2"
+          className="css-1tsnilr-GraphTitle e1567l2h2"
         >
-          Fatalities
+          Crashes
         </p>
       </GraphTitle>
     </div>
