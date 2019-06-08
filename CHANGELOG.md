@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add buttons to doanload the data set in `JSON` or `CSV`. [#103]
+- Add a new view for visualizing the archive data. [#104]
+- Add a graph showing the fatality distribution based on the year. [#105]
+- Add a graph showing the fatality distribution based on the transportation mode. [#107]
+- Add a graph showing the fatality distribution based on the crash cause. [#108]
+
+### Fixed
+
+- The counter shows crashes, no fatalities. [#106]
+
 ## [[0.2.4]] - 2019-05-08
 
 ### Added
@@ -34,4 +46,9 @@ This is the first complete release of ScrAPDviz.
 [#91]: https://github.com/scrapd/scrapdviz/pull/91
 [#92]: https://github.com/scrapd/scrapdviz/pull/92
 [#93]: https://github.com/scrapd/scrapdviz/pull/93
-
+[#103]: https://github.com/scrapd/scrapdviz/pull/103
+[#104]: https://github.com/scrapd/scrapdviz/pull/104
+[#105]: https://github.com/scrapd/scrapdviz/pull/105
+[#106]: https://github.com/scrapd/scrapdviz/pull/106
+[#107]: https://github.com/scrapd/scrapdviz/pull/107
+[#108]: https://github.com/scrapd/scrapdviz/pull/108
