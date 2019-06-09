@@ -5,7 +5,6 @@ import moment from 'moment';
 import styled from '@emotion/styled';
 import { Table } from 'antd';
 import { connect } from 'react-redux';
-import { fetchDataAsync, selectDate } from '../redux/store';
 
 // Define responsive options.
 const breakpoints = [1048];
@@ -20,7 +19,6 @@ const TableDiv = styled.div(
 class ScrapdGrid extends React.Component {
   constructor(props) {
     super(props);
-    this.onChange = this.onChange.bind(this);
     this.state = {
       error: null,
       isLoaded: false
@@ -61,18 +59,6 @@ class ScrapdGrid extends React.Component {
     ];
   }
 
-  componentDidMount() {
-    const dateFilter = this.props.date_filter;
-    this.props.fetchDataAsync(dateFilter);
-    this.props.selectDate(dateFilter);
-  }
-
-  onChange(dates) {
-    let dateFilter = { from_: dates[0], to: dates[1] };
-    this.props.fetchDataAsync(dateFilter);
-    this.props.selectDate(dateFilter);
-  }
-
   render() {
     return (
       <div>
@@ -85,18 +71,13 @@ class ScrapdGrid extends React.Component {
 }
 
 ScrapdGrid.propTypes = {
-  fetchDataAsync: PropTypes.func.isRequired,
-  selectDate: PropTypes.func.isRequired,
   date_filter: PropTypes.object,
   fatalities: PropTypes.array
 };
 
 const mapStateToProps = state => {
-  const { date_filter, fatalities } = state;
-  return { date_filter, fatalities };
+  const { fatalities } = state;
+  return { fatalities };
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchDataAsync, selectDate }
-)(ScrapdGrid);
+export default connect(mapStateToProps)(ScrapdGrid);

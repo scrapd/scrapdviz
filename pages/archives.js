@@ -1,5 +1,5 @@
 import ScrapdCauseGraph from '../components/scrapd-cause-graph';
-import ScrapdControls from '../components/scrapd-controls';
+import ScrapdControlsContainer from '../components/scrapd-controls/container';
 import ScrapdFatalityContainer from '../components/fatality-counter/container';
 import ScrapdLayout from '../components/layout';
 import ScrapdMonthGraph from '../components/scrapd-month-graph';
@@ -27,7 +27,7 @@ const GraphArea = styled.div({
 
 const Archives = () => (
   <ScrapdLayout>
-    <ScrapdControls />
+    <ScrapdControlsContainer />
     <GraphArea>
       <ScrapdYearGraph />
       <ScrapdMonthGraph />

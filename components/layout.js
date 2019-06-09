@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { Row, Col, Icon, Layout, Menu } from 'antd';
 import { connect } from 'react-redux';
-import { setView } from '../redux/store';
+import { fetchDataAsync } from '../redux/store';
+import React from 'react';
 
 const { Content, Footer, Header } = Layout;
 
@@ -27,65 +28,94 @@ const Logo = styled.img({
   float: 'left'
 });
 
-const ScrapdLayout = props => (
-  <div>
-    <Layout>
-      <Header style={{ background: '#fff', padding: 0 }}>
-        <Logo src="/static/images/logos/scrapd-logo-128x152.png" alt="RYR logo" />
-        <Menu theme="light" mode="horizontal" selectedKeys={[props.view]} style={{ lineHeight: '64px' }}>
-          <Menu.Item key="apdView">
-            <Link href="/">
-              <a>APD</a>
-            </Link>{' '}
-          </Menu.Item>
-          <Menu.Item key="archiveView">
-            <Link href="/archives">
-              <a>Archives</a>
-            </Link>{' '}
-          </Menu.Item>
-        </Menu>
-      </Header>
-      <Layout>
-        <Content style={{ margin: '24px 16px 0' }}>
-          <div style={{ padding: 24, background: '#fff', minHeight: '80vh' }}>{props.children}</div>
-        </Content>
-      </Layout>
-      <Footer>
-        <Row>
-          <Col style={{ textAlign: 'left' }} span={8}>
-            <a target="_blank" rel="noopener noreferrer" href="https://ant.design/">
-              <Icon type="ant-design" style={{ ...FooterIconStyle, ...FooterIconStyleLeft }} />
-            </a>
-          </Col>
-          <Col style={{ textAlign: 'center' }} span={8}>
-            ScrAPDviz powered by Ant Design
-          </Col>
-          <Col style={{ textAlign: 'right' }} span={8}>
-            <a target="_blank" rel="noopener noreferrer" href="mailto:info@scrapd.org">
-              <Icon type="mail" style={{ ...FooterIconStyle, ...FooterIconStyleRight }} />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/scrapd">
-              <Icon type="github" style={{ ...FooterIconStyle, ...FooterIconStyleRight }} />
-            </a>
-          </Col>
-        </Row>
-      </Footer>
-    </Layout>
-  </div>
-);
+class ScrapdLayout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      view: 'apdView'
+    };
+  }
+
+  componentDidMount() {
+    const dateFilter = this.props.date_filter;
+    this.props.fetchDataAsync(dateFilter);
+  }
+
+  handleClick = e => {
+    console.log('click ', e);
+    this.setState({
+      view: e.key
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Layout>
+          <Header style={{ background: '#fff', padding: 0 }}>
+            <Logo src="/static/images/logos/scrapd-logo-128x152.png" alt="RYR logo" />
+            <Menu
+              theme="light"
+              mode="horizontal"
+              onClick={this.handleClick}
+              selectedKeys={[this.state.view]}
+              style={{ lineHeight: '64px' }}
+            >
+              <Menu.Item key="apdView">
+                <Link href="/">
+                  <a>APD</a>
+                </Link>{' '}
+              </Menu.Item>
+              <Menu.Item key="archiveView">
+                <Link href="/archives">
+                  <a>Archives</a>
+                </Link>{' '}
+              </Menu.Item>
+            </Menu>
+          </Header>
+          <Layout>
+            <Content style={{ margin: '24px 16px 0' }}>
+              <div style={{ padding: 24, background: '#fff', minHeight: '80vh' }}>{this.props.children}</div>
+            </Content>
+          </Layout>
+          <Footer>
+            <Row>
+              <Col style={{ textAlign: 'left' }} span={8}>
+                <a target="_blank" rel="noopener noreferrer" href="https://ant.design/">
+                  <Icon type="ant-design" style={{ ...FooterIconStyle, ...FooterIconStyleLeft }} />
+                </a>
+              </Col>
+              <Col style={{ textAlign: 'center' }} span={8}>
+                ScrAPDviz powered by Ant Design
+              </Col>
+              <Col style={{ textAlign: 'right' }} span={8}>
+                <a target="_blank" rel="noopener noreferrer" href="mailto:info@scrapd.org">
+                  <Icon type="mail" style={{ ...FooterIconStyle, ...FooterIconStyleRight }} />
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/scrapd">
+                  <Icon type="github" style={{ ...FooterIconStyle, ...FooterIconStyleRight }} />
+                </a>
+              </Col>
+            </Row>
+          </Footer>
+        </Layout>
+      </div>
+    );
+  }
+}
 
 ScrapdLayout.propTypes = {
   children: PropTypes.array,
-  setView: PropTypes.func.isRequired,
-  view: PropTypes.string
+  date_filter: PropTypes.object,
+  fetchDataAsync: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
-  const { view } = state;
-  return { view };
+  const { date_filter, fatalities } = state;
+  return { date_filter, fatalities };
 };
 
 export default connect(
   mapStateToProps,
-  { setView }
+  { fetchDataAsync }
 )(ScrapdLayout);
