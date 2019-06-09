@@ -1,5 +1,5 @@
 import ScrapdAgeGraph from '../components/scrapd-age-graph';
-import ScrapdControls from '../components/scrapd-controls';
+import ScrapdControlsContainer from '../components/scrapd-controls/container';
 import ScrapdFatalityContainer from '../components/fatality-counter/container';
 import ScrapdGrid from '../components/scrapd-grid';
 import ScrapdLayout from '../components/layout';
@@ -27,7 +27,7 @@ const GraphArea = styled.div({
 
 const Index = () => (
   <ScrapdLayout>
-    <ScrapdControls />
+    <ScrapdControlsContainer />
     <ScrapdGrid />
     <GraphArea>
       <ScrapdPieGraph attribute="Gender" />
