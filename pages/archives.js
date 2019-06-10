@@ -1,17 +1,17 @@
-import ScrapdCauseGraph from '../components/scrapd-cause-graph';
+import ScrapdCauseGraphContainer from '../components/scrapd-cause-graph/container';
 import ScrapdControlsContainer from '../components/scrapd-controls/container';
 import ScrapdFatalityContainer from '../components/fatality-counter/container';
-import ScrapdLayout from '../components/layout';
-import ScrapdMonthGraph from '../components/scrapd-month-graph';
-import ScrapdPieGraph from '../components/scrapd-pie-graph';
-import ScrapdTimeGraph from '../components/scrapd-time-graph';
-import ScrapdWeekdayGraph from '../components/scrapd-weekday-graph';
-import ScrapdYearGraph from '../components/scrapd-year-graph';
+import ScrapdLayout from '../components/scrapd-layout';
+import ScrapdMonthGraphContainer from '../components/scrapd-month-graph/container';
+import ScrapdPieGraphContainer from '../components/scrapd-pie-graph/container';
+import ScrapdTimeGraphContainer from '../components/scrapd-time-graph/container';
+import ScrapdWeekdayGraphContainer from '../components/scrapd-weekday-graph/container';
+import ScrapdYearGraphContainer from '../components/scrapd-year-graph/container';
 import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 
-const ScrapdMap = dynamic(() => import('../components/scrapd-map'), {
+const ScrapdMap = dynamic(() => import('../components/scrapd-map/container'), {
   loading: () => <p>Loading...</p>,
   ssr: false
 });
@@ -29,12 +29,12 @@ const Archives = () => (
   <ScrapdLayout>
     <ScrapdControlsContainer />
     <GraphArea>
-      <ScrapdYearGraph />
-      <ScrapdMonthGraph />
-      <ScrapdWeekdayGraph />
-      <ScrapdTimeGraph />
-      <ScrapdCauseGraph />
-      <ScrapdPieGraph attribute="Type" />
+      <ScrapdYearGraphContainer />
+      <ScrapdMonthGraphContainer />
+      <ScrapdWeekdayGraphContainer />
+      <ScrapdTimeGraphContainer />
+      <ScrapdCauseGraphContainer />
+      <ScrapdPieGraphContainer attribute="Type" />
       <ScrapdFatalityContainer />
       <ScrapdMap />
     </GraphArea>

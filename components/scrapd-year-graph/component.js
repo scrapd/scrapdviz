@@ -1,7 +1,6 @@
 import Proptypes from 'prop-types';
-import ScrapdGenericBarChart from './scrapd-generic-bar-chart';
+import ScrapdGenericBarChart from '../scrapd-generic-bar-chart/component';
 import moment from 'moment';
-import { connect } from 'react-redux';
 
 const ScrapdYearGraph = props => {
   let datamap = new Object();
@@ -19,13 +18,7 @@ const ScrapdYearGraph = props => {
 };
 
 ScrapdYearGraph.propTypes = {
-  fatalities: Proptypes.array,
-  attribute: Proptypes.string
+  fatalities: Proptypes.array
 };
 
-const mapStateToProps = state => {
-  const { fatalities } = state;
-  return { fatalities };
-};
-
-export default connect(mapStateToProps)(ScrapdYearGraph);
+export default ScrapdYearGraph;

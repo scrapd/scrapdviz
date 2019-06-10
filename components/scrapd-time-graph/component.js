@@ -1,10 +1,8 @@
 import Proptypes from 'prop-types';
-import ScrapdGenericPieChart from './scrapd-generic-pie-chart';
+import ScrapdGenericPieChart from '../scrapd-generic-pie-chart/component';
 import moment from 'moment';
-import { connect } from 'react-redux';
 
 const ScrapdTimeGraph = props => {
-  // The data should come directly from the API.
   let datamap = new Object();
   datamap['631a-930a'] = 0;
   datamap['931a-400p'] = 0;
@@ -47,13 +45,7 @@ const ScrapdTimeGraph = props => {
 };
 
 ScrapdTimeGraph.propTypes = {
-  fatalities: Proptypes.array,
-  attribute: Proptypes.string
+  fatalities: Proptypes.array
 };
 
-const mapStateToProps = state => {
-  const { fatalities } = state;
-  return { fatalities };
-};
-
-export default connect(mapStateToProps)(ScrapdTimeGraph);
+export default ScrapdTimeGraph;

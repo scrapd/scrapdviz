@@ -1,10 +1,8 @@
 import Proptypes from 'prop-types';
-import ScrapdGenericBarChart from './scrapd-generic-bar-chart';
+import ScrapdGenericBarChart from '../scrapd-generic-bar-chart/component';
 import moment from 'moment';
-import { connect } from 'react-redux';
 
 const ScrapdWeekdayGraph = props => {
-  // The data should come directly from the API.
   let datamap = new Object();
   datamap['Monday'] = 0;
   datamap['Tuesday'] = 0;
@@ -30,9 +28,4 @@ ScrapdWeekdayGraph.propTypes = {
   attribute: Proptypes.string
 };
 
-const mapStateToProps = state => {
-  const { fatalities } = state;
-  return { fatalities };
-};
-
-export default connect(mapStateToProps)(ScrapdWeekdayGraph);
+export default ScrapdWeekdayGraph;

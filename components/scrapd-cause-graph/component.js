@@ -1,6 +1,5 @@
 import Proptypes from 'prop-types';
-import ScrapdGenericPieChart from './scrapd-generic-pie-chart';
-import { connect } from 'react-redux';
+import ScrapdGenericPieChart from '../scrapd-generic-pie-chart/component';
 
 const ScrapdCauseGraph = props => {
   let datamap = new Object();
@@ -44,9 +43,4 @@ ScrapdCauseGraph.propTypes = {
   attribute: Proptypes.string
 };
 
-const mapStateToProps = state => {
-  const { fatalities } = state;
-  return { fatalities };
-};
-
-export default connect(mapStateToProps)(ScrapdCauseGraph);
+export default ScrapdCauseGraph;
