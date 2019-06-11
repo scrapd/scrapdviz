@@ -3,8 +3,6 @@ import React from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
 import styled from '@emotion/styled';
 import { Cluster, Marker } from 'react-mapbox-gl';
-import { connect } from 'react-redux';
-import { fetchDataAsync, selectDate } from '../redux/store';
 
 const Map = ReactMapboxGl({
   accessToken: 'pk.eyJ1IjoicmdyZWluaG9mZXIiLCJhIjoiY2pwMWt1aGxwMDI0czNrbGJmN2JxaDdsdSJ9.B84ADcgppQIggUtHv4C3UQ',
@@ -81,12 +79,4 @@ ScrapdMap.propTypes = {
   fatalities: Proptypes.array
 };
 
-const mapStateToProps = state => {
-  const { date_filter, fatalities } = state;
-  return { date_filter, fatalities };
-};
-
-export default connect(
-  mapStateToProps,
-  { fetchDataAsync, selectDate }
-)(ScrapdMap);
+export default ScrapdMap;

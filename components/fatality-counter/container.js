@@ -1,7 +1,6 @@
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
 import ScrapdFatalityCounter from './component';
+import { connect } from 'react-redux';
 
 const ScrapdFatalityContainer = ({ fatalities }) => <ScrapdFatalityCounter fatalities={fatalities} />;
 

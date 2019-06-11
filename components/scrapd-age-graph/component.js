@@ -1,13 +1,11 @@
 import Proptypes from 'prop-types';
-import ScrapdGenericPieChart from './scrapd-generic-pie-chart';
-import { connect } from 'react-redux';
+import ScrapdGenericPieChart from '../scrapd-generic-pie-chart/component';
 
 function isBetween(x, min, max) {
   return x >= min && x <= max;
 }
 
 const ScrapdAgeGraph = props => {
-  // The data should come directly from the API.
   let datamap = new Object();
   datamap['00-17'] = 0;
   datamap['18-24'] = 0;
@@ -47,9 +45,4 @@ ScrapdAgeGraph.propTypes = {
   attribute: Proptypes.string
 };
 
-const mapStateToProps = state => {
-  const { fatalities } = state;
-  return { fatalities };
-};
-
-export default connect(mapStateToProps)(ScrapdAgeGraph);
+export default ScrapdAgeGraph;

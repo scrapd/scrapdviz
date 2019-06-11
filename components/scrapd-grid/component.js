@@ -4,7 +4,6 @@ import facepaint from 'facepaint';
 import moment from 'moment';
 import styled from '@emotion/styled';
 import { Table } from 'antd';
-import { connect } from 'react-redux';
 
 // Define responsive options.
 const breakpoints = [1048];
@@ -75,9 +74,4 @@ ScrapdGrid.propTypes = {
   fatalities: PropTypes.array
 };
 
-const mapStateToProps = state => {
-  const { fatalities } = state;
-  return { fatalities };
-};
-
-export default connect(mapStateToProps)(ScrapdGrid);
+export default ScrapdGrid;
