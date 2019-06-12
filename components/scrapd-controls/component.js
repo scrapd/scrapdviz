@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useRef } from 'react';
 import moment from 'moment';
 import styled from '@emotion/styled';
 import { Button, DatePicker, message } from 'antd';
@@ -22,19 +23,14 @@ const success = () => {
   message.success('Copied to clipboard');
 };
 
-const download = (data, fileType) => {
-  var filename = 'scrapd_data';
-  var element = document.createElement('a');
-  var formattedText = formatData(data, fileType);
-  element.setAttribute('href', `data:text/${fileType};charset=utf-8,` + encodeURIComponent(formattedText));
-  element.setAttribute('download', `${filename}.${fileType}`);
+const download = (myRef, data, fileType) => {
+  const filename = 'scrapd_data';
+  const formattedText = formatData(data, fileType);
 
-  element.style.display = 'none';
-  document.body.appendChild(element);
+  myRef.current.setAttribute('href', `data:text/${fileType};charset=utf-8,` + encodeURIComponent(formattedText));
+  myRef.current.setAttribute('download', `${filename}.${fileType}`);
 
-  element.click();
-
-  document.body.removeChild(element);
+  myRef.current.click();
 };
 
 const formatData = (data, fileType) => {
@@ -53,9 +49,12 @@ const json2csv = items => {
   return csv;
 };
 
-const ScrapdControls = props => {
+const ScrapdControls = ({ date_filter, fatalities, onChange }) => {
+  const myRef = useRef(null);
+
   return (
     <div>
+      <a ref={myRef} style={{ display: 'none' }} />
       <ControlDiv>
         <ButtonDiv>
           <RangePicker
@@ -74,32 +73,32 @@ const ScrapdControls = props => {
               '2019': [moment('2019-01-01').startOf('year'), moment('2019-01-01').endOf('year')],
               All: [moment('2015-01-01').startOf('year'), moment('2025-01-01').endOf('year')]
             }}
-            onChange={props.onChange}
-            defaultValue={[moment(props.date_filter.from_), moment(props.date_filter.to)]}
+            onChange={onChange}
+            defaultValue={[moment(date_filter.from_), moment(date_filter.to)]}
             format="MM/DD/YYYY"
           />
         </ButtonDiv>
         <ButtonDiv>
-          <CopyToClipboard text={json2csv(props.fatalities)}>
+          <CopyToClipboard text={json2csv(fatalities)}>
             <Button type="primary" size="small" icon="copy" onClick={success}>
               CSV
             </Button>
           </CopyToClipboard>
         </ButtonDiv>
         <ButtonDiv>
-          <CopyToClipboard text={JSON.stringify(props.fatalities)}>
+          <CopyToClipboard text={JSON.stringify(fatalities)}>
             <Button size="small" icon="copy" onClick={success}>
               JSON
             </Button>
           </CopyToClipboard>
         </ButtonDiv>
         <ButtonDiv>
-          <Button size="small" icon="download" onClick={() => download(props.fatalities, 'csv')}>
+          <Button size="small" icon="download" onClick={() => download(myRef, fatalities, 'csv')}>
             CSV
           </Button>
         </ButtonDiv>
         <ButtonDiv>
-          <Button size="small" icon="download" onClick={() => download(props.fatalities, 'json')}>
+          <Button size="small" icon="download" onClick={() => download(myRef, fatalities, 'json')}>
             JSON
           </Button>
         </ButtonDiv>
