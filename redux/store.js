@@ -17,11 +17,14 @@ const bindMiddleware = (middleware) => {
 // Define the initial state of the store .
 const initialState = {
   date_filter: { from_: moment().startOf('year'), to: moment().endOf('year') },
-  fatalities: []
+  fatalities: [],
+  archives: []
 }
 
 // Define the redux action types.
 export const actionTypes = {
+  FETCH_ARCHIVES: 'FETCH_ARCHIVES',
+  FETCH_ARCHIVES_ASYNC: 'FETCH_ARCHIVES_ASYNC',
   FETCH_DATA: 'FETCH_DATA',
   FETCH_DATA_ASYNC: 'FETCH_DATA_ASYNC',
   SELECT_DATE: 'SELECT_DATE',
@@ -30,6 +33,7 @@ export const actionTypes = {
 // Define reducers.
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.FETCH_ARCHIVES:
     case actionTypes.FETCH_DATA:
     case actionTypes.SELECT_DATE:
       return {
@@ -42,6 +46,16 @@ export const reducer = (state = initialState, action) => {
 }
 
 // Define actions.
+export const fetchArchives = (archives) => ({
+  type: actionTypes.FETCH_ARCHIVES,
+  payload: { archives }
+});
+
+export const fetchArchivesAsync = (date_filter) => ({
+  type: actionTypes.FETCH_ARCHIVES_ASYNC,
+  payload: { date_filter }
+});
+
 export const fetchData = (fatalities) => ({
   type: actionTypes.FETCH_DATA,
   payload: { fatalities }

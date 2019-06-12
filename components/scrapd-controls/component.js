@@ -69,10 +69,14 @@ const ScrapdControls = props => {
                   .endOf('month')
               ],
               'This month': [moment().startOf('month'), moment().endOf('month')],
-              '2017': [moment('2017-01-01').startOf('year'), moment('2017-01-01').endOf('year')],
-              '2018': [moment('2018-01-01').startOf('year'), moment('2018-01-01').endOf('year')],
-              '2019': [moment('2019-01-01').startOf('year'), moment('2019-01-01').endOf('year')],
-              All: [moment('2015-01-01').startOf('year'), moment('2025-01-01').endOf('year')]
+              "'13": [moment('2013-01-01').startOf('year'), moment('2013-01-01').endOf('year')],
+              "'14": [moment('2014-01-01').startOf('year'), moment('2014-01-01').endOf('year')],
+              "'15": [moment('2015-01-01').startOf('year'), moment('2015-01-01').endOf('year')],
+              "'16": [moment('2016-01-01').startOf('year'), moment('2016-01-01').endOf('year')],
+              "'17": [moment('2017-01-01').startOf('year'), moment('2017-01-01').endOf('year')],
+              "'18": [moment('2018-01-01').startOf('year'), moment('2018-01-01').endOf('year')],
+              "'19": [moment('2019-01-01').startOf('year'), moment('2019-01-01').endOf('year')],
+              All: [moment('2013-01-01').startOf('year'), moment('2025-01-01').endOf('year')]
             }}
             onChange={props.onChange}
             defaultValue={[moment(props.date_filter.from_), moment(props.date_filter.to)]}
