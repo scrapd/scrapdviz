@@ -18,7 +18,8 @@ const bindMiddleware = (middleware) => {
 const initialState = {
   date_filter: { from_: moment().startOf('year'), to: moment().endOf('year') },
   fatalities: [],
-  archives: []
+  archives: [],
+  view: 'apdView'
 }
 
 // Define the redux action types.
@@ -28,6 +29,7 @@ export const actionTypes = {
   FETCH_DATA: 'FETCH_DATA',
   FETCH_DATA_ASYNC: 'FETCH_DATA_ASYNC',
   SELECT_DATE: 'SELECT_DATE',
+  SELECT_VIEW: 'SELECT_VIEW'
 }
 
 // Define reducers.
@@ -36,6 +38,7 @@ export const reducer = (state = initialState, action) => {
     case actionTypes.FETCH_ARCHIVES:
     case actionTypes.FETCH_DATA:
     case actionTypes.SELECT_DATE:
+    case actionTypes.SELECT_VIEW:
       return {
         ...state, ...action.payload
       }
@@ -69,6 +72,11 @@ export const fetchDataAsync = (date_filter) => ({
 export const selectDate = (date_filter) => ({
   type: actionTypes.SELECT_DATE,
   payload: { date_filter }
+});
+
+export const selectView = (view) => ({
+  type: actionTypes.SELECT_VIEW,
+  payload: { view }
 });
 
 // Initialize store.

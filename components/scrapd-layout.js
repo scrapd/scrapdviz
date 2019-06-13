@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { Row, Col, Icon, Layout, Menu } from 'antd';
 import { connect } from 'react-redux';
-import { fetchDataAsync } from '../redux/store';
+import { selectView } from '../redux/store';
 import React from 'react';
 
 const { Content, Footer, Header } = Layout;
@@ -31,21 +31,11 @@ const Logo = styled.img({
 class ScrapdLayout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      view: 'apdView'
-    };
-  }
-
-  componentDidMount() {
-    const dateFilter = this.props.date_filter;
-    this.props.fetchDataAsync(dateFilter);
   }
 
   handleClick = e => {
     console.log('click ', e);
-    this.setState({
-      view: e.key
-    });
+    this.props.selectView(e.key);
   };
 
   render() {
@@ -58,7 +48,7 @@ class ScrapdLayout extends React.Component {
               theme="light"
               mode="horizontal"
               onClick={this.handleClick}
-              selectedKeys={[this.state.view]}
+              selectedKeys={[this.props.view]}
               style={{ lineHeight: '64px' }}
             >
               <Menu.Item key="apdView">
@@ -107,15 +97,16 @@ class ScrapdLayout extends React.Component {
 ScrapdLayout.propTypes = {
   children: PropTypes.array,
   date_filter: PropTypes.object,
-  fetchDataAsync: PropTypes.func.isRequired
+  view: PropTypes.string,
+  selectView: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
-  const { date_filter, fatalities } = state;
-  return { date_filter, fatalities };
+  const { date_filter, fatalities, view } = state;
+  return { date_filter, fatalities, view };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchDataAsync }
+  { selectView }
 )(ScrapdLayout);
