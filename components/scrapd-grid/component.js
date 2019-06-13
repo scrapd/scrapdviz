@@ -11,7 +11,8 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`));
 
 const TableDiv = styled.div(
   mq({
-    display: ['none', 'block']
+    display: ['none', 'block'],
+    marginTop: '1em'
   })
 );
 
@@ -70,7 +71,6 @@ class ScrapdGrid extends React.Component {
 }
 
 ScrapdGrid.propTypes = {
-  date_filter: PropTypes.object,
   fatalities: PropTypes.array
 };
 

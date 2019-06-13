@@ -2,6 +2,7 @@ import Proptypes from 'prop-types';
 import styled from '@emotion/styled';
 import ScrapdAgeGraph from '../scrapd-age-graph/container';
 import ScrapdFatality from '../fatality-counter/component';
+import ScrapdGrid from '../scrapd-grid/component';
 import ScrapdMonthGraph from '../scrapd-month-graph/component';
 import ScrapdNoDataAlert from '../scrapd-no-data-alert/component';
 import ScrapdPieGraph from '../scrapd-pie-graph/component';
@@ -15,7 +16,7 @@ const ScrapdMap = dynamic(() => import('../scrapd-map/component'), {
 });
 
 const GraphArea = styled.div({
-  display: 'inline-flex',
+  display: 'flex',
   width: '100%',
   flexDirection: 'row',
   flexWrap: 'wrap',
@@ -27,6 +28,7 @@ const ScrapdApdView = ({ fatalities }) => {
   return (
     <div>
       <ScrapdNoDataAlert count={fatalities.length} />
+      <ScrapdGrid fatalities={fatalities} />
       <GraphArea>
         <ScrapdPieGraph fatalities={fatalities} attribute="Gender" />
         <ScrapdPieGraph fatalities={fatalities} attribute="Ethnicity" />
