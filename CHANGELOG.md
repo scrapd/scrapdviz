@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add a graph showing the fatality distribution based on the year. [#105]
 - Add a graph showing the fatality distribution based on the transportation mode. [#107]
 - Add a graph showing the fatality distribution based on the crash cause. [#108]
+- Add an APD view component for the APD view.
+- Add an archive view component for the archive view.
+- Add a warning message if there is no data within the selected dates.
 
 ### Fixed
 

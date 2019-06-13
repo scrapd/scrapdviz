@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { all, call, delay, put, takeLatest } from 'redux-saga/effects'
-import { actionTypes, fetchData } from './store'
+import { actionTypes, fetchArchives, fetchData } from './store'
 
 // Use this for mocking only.
 // import { fatalities } from '../mock-api/mock-data'
@@ -41,9 +41,23 @@ function* workerFetchDataAsync(action) {
   yield put(fetchData(f));
 }
 
+function* watchFetchArchivesAsync() {
+  yield takeLatest(actionTypes.FETCH_ARCHIVES_ASYNC, workerFetchArchivesAsync);
+}
+
+function* workerFetchArchivesAsync(action) {
+  const { from_, to } = action.payload.date_filter;
+  const endpoint = 'https://raw.githubusercontent.com/scrapd/datasets/master/datasets/archives-all.json';
+  const response = yield call(fetch, endpoint);
+  const fatalities = yield call([response, "json"]);
+  const f = filterFatalities(fatalities, from_, to);
+  // yield delay(1000)
+  yield put(fetchArchives(f));
+}
+
 // Single entry point to start all Sagas at once.
 export default function* rootSaga() {
   yield all([
-    watchFetchDataAsync()
+    watchFetchDataAsync(), watchFetchArchivesAsync()
   ])
 }
