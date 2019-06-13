@@ -7,15 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[0.3.0]] - 2019-06-13
+
 ### Added
 
-- Add buttons to doanload the data set in `JSON` or `CSV`. [#103]
+- Add buttons to download the data set in `JSON` or `CSV`. [#103]
 - Add a new view for visualizing the archive data. [#104]
 - Add a graph showing the fatality distribution based on the year. [#105]
 - Add a graph showing the fatality distribution based on the transportation mode. [#107]
 - Add a graph showing the fatality distribution based on the crash cause. [#108]
-- Add an APD view component for the APD view.
-- Add an archive view component for the archive view.
 - Add a warning message if there is no data within the selected dates.
 
 ### Fixed
@@ -42,6 +42,7 @@ This is the first complete release of ScrAPDviz.
 [//]: # (Release links)
 [0.2.3]: https://github.com/scrapd/scrapdviz/releases/tag/0.2.3
 [0.2.4]: https://github.com/scrapd/scrapdviz/releases/tag/0.2.4
+[0.3.0]: https://github.com/scrapd/scrapdviz/releases/tag/0.3.0
 
 [//]: # (PR links)
 [#89]: https://github.com/scrapd/scrapdviz/pull/89
