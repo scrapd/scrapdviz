@@ -123,24 +123,23 @@ function clusterMarker(coordinates, count) {
 
 function SingleMarker(fatality) {
   let Icon;
-  let markerStyle = markerStyle;
+  let SingleMarkerStyle = markerStyle;
   if (fatality.Type == 'motorcycle') {
-    markerStyle = markerStyleMotorcycle;
+    SingleMarkerStyle = markerStyleMotorcycle;
     Icon = <FontAwesomeIcon icon={faMotorcycle} />;
   } else if (fatality.Type == 'pedestrian') {
-    markerStyle = markerStylePedestrian;
+    SingleMarkerStyle = markerStylePedestrian;
     Icon = <FontAwesomeIcon icon={faWalking} />;
   } else if (fatality.Type == 'bicycle') {
-    markerStyle = markerStyleBicycle;
+    SingleMarkerStyle = markerStyleBicycle;
     Icon = <FontAwesomeIcon icon={faBiking} />;
   } else if (fatality.Type == 'motor vehicle') {
-    markerStyle = markerStyleMotor;
+    SingleMarkerStyle = markerStyleMotor;
     Icon = <FontAwesomeIcon icon={faCarCrash} />;
   }
 
   return (
-    <Marker key={fatality.Case} style={markerStyle} coordinates={[fatality.Longitude, fatality.Latitude]}>
-      {/* <Icon /> */}
+    <Marker key={fatality.Case} style={SingleMarkerStyle} coordinates={[fatality.Longitude, fatality.Latitude]}>
       {Icon}
     </Marker>
   );
