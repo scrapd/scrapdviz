@@ -138,6 +138,15 @@ function SingleMarker(fatality) {
     Icon = <FontAwesomeIcon icon={faCarCrash} />;
   }
 
+  // Trick to ignore invalid markers. react-mapbox-gl REQUIRES a markers to be placed if it is declare. It is not
+  // possible to simply return a div or a similar element. So to cheat, I put all the invalid markers at the prime
+  // meridian (0,0).
+  // A cleaner way would be to filter out invalid coordinates in the `map` function calling this one.
+  if (fatality.Longitude == null || fatality.Latitude == null) {
+    console.log('Invalid marker coordinates: [' + fatality.Longitude + ', ' + fatality.Latitude + ']');
+    return <Marker key={fatality.Case} style={SingleMarkerStyle} coordinates={[0, 0]} />;
+  }
+
   return (
     <Marker key={fatality.Case} style={SingleMarkerStyle} coordinates={[fatality.Longitude, fatality.Latitude]}>
       {Icon}
