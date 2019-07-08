@@ -190,3 +190,25 @@ patch:
         patched: '2019-07-04T04:21:07.482Z'
     - next > @babel/preset-env > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
         patched: '2019-07-04T04:21:07.482Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-08T21:10:22.069Z'
