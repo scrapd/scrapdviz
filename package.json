@@ -17,7 +17,9 @@
     "ship": "run-s dump && ./tools/deploy.sh",
     "start": "NODE_ENV=production node server.js",
     "test": "jest",
-    "test:update": "jest -u"
+    "test:update": "jest -u",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -56,7 +58,8 @@
     "react-mapbox-gl": "^4.2.0",
     "react-redux": "^6.0.1",
     "redux-saga": "^1.0.2",
-    "victory": "^32.1.0"
+    "victory": "^32.1.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -171,5 +174,6 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "none"
-  }
+  },
+  "snyk": true
 }
