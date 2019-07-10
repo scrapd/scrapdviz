@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[0.4.0]] - 2019-07-10
+
+### Added
+
+- Add an icon and a specific color to a marker, based on the type of crash. [#135]
+- Add generic markers for fatalities without a type. [#137]
+
+### Changed
+
+- Adjust the sizes and the colors of the clusters based on the number of crashes they represent. [#134]
+- Rename the date and time columns as they were confusing for the users. [#139]
+- Clarifies the warning message mentioning that there is no data to show
+for the selected dates. [#140]
+
+### Fixed
+
+- Markers with invalid coordinates prevent the map to render. [#138]
+
 ## [[0.3.0]] - 2019-06-13
 
 ### Added
@@ -43,6 +61,7 @@ This is the first complete release of ScrAPDviz.
 [0.2.3]: https://github.com/scrapd/scrapdviz/releases/tag/0.2.3
 [0.2.4]: https://github.com/scrapd/scrapdviz/releases/tag/0.2.4
 [0.3.0]: https://github.com/scrapd/scrapdviz/releases/tag/0.3.0
+[0.4.0]: https://github.com/scrapd/scrapdviz/releases/tag/0.4.0
 
 [//]: # (PR links)
 [#89]: https://github.com/scrapd/scrapdviz/pull/89
@@ -56,3 +75,9 @@ This is the first complete release of ScrAPDviz.
 [#106]: https://github.com/scrapd/scrapdviz/pull/106
 [#107]: https://github.com/scrapd/scrapdviz/pull/107
 [#108]: https://github.com/scrapd/scrapdviz/pull/108
+[#134]: https://github.com/scrapd/scrapdviz/pull/134
+[#135]: https://github.com/scrapd/scrapdviz/pull/135
+[#137]: https://github.com/scrapd/scrapdviz/pull/137
+[#138]: https://github.com/scrapd/scrapdviz/pull/138
+[#139]: https://github.com/scrapd/scrapdviz/pull/139
+[#140]: https://github.com/scrapd/scrapdviz/pull/140
