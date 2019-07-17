@@ -61,6 +61,11 @@ class ScrapdLayout extends React.Component {
                   <a>Archives</a>
                 </Link>{' '}
               </Menu.Item>
+              <Menu.Item key="developers">
+                <Link href="/developers">
+                  <a>For Developers</a>
+                </Link>{' '}
+              </Menu.Item>
             </Menu>
           </Header>
           <Layout>
