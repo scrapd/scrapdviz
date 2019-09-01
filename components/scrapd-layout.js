@@ -52,12 +52,12 @@ class ScrapdLayout extends React.Component {
               style={{ lineHeight: '64px' }}
             >
               <Menu.Item key="home">
-                <Link href="/home">
+                <Link href="/">
                   <a>Home</a>
                 </Link>{' '}
               </Menu.Item>
               <Menu.Item key="apdView">
-                <Link href="/">
+                <Link href="/apd">
                   <a>APD</a>
                 </Link>{' '}
               </Menu.Item>

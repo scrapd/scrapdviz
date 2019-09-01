@@ -1,13 +1,11 @@
-import ScrapdControlsContainer from '../components/scrapd-controls/container';
 import ScrapdLayout from '../components/scrapd-layout';
-import ScrapdApdViewContainer from '../components/scrapd-apd-view/container';
+import ScrapdHomeViewContainer from '../components/scrapd-home-view/container';
 import { connect } from 'react-redux';
 
-const Index = () => (
+const Home = () => (
   <ScrapdLayout>
-    <ScrapdControlsContainer />
-    <ScrapdApdViewContainer />
+    <ScrapdHomeViewContainer />
   </ScrapdLayout>
 );
 
-export default connect()(Index);
+export default connect()(Home);

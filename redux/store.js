@@ -19,7 +19,7 @@ const initialState = {
   date_filter: { from_: moment().startOf('year'), to: moment().endOf('year') },
   fatalities: [],
   archives: [],
-  view: 'apdView'
+  view: 'home'
 }
 
 // Define the redux action types.
