@@ -1,5 +1,5 @@
 
-const carImage = {
+const heroImage = {
   height: '500px',
     'background-image': 'url("https://res.cloudinary.com/ab91/image/upload/v1567305230/scrAPD%20Viz/hero_image.png")',
     'background-size': 'cover',
@@ -29,7 +29,7 @@ const subtitleStyle = {
 const ScrapdHero = props => {
   return (
     <div>
-      <div style={carImage}>
+      <div style={heroImage}>
         <div style={text}>
             <h1 style={titleStyle}>{props.title}</h1>
           <h3 style={subtitleStyle}>{props.subtitle1}</h3>
