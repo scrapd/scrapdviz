@@ -1,5 +1,42 @@
 import ScrapdHomeSection from '../scrapd-home-section/component';
 import ScrapdHero from '../scrapd-hero/component.js';
+<<<<<<< HEAD
+=======
+
+const headerStyle = {
+  height: '80vh',
+  'background-image': 'url("https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/177348.jpg")'
+};
+
+const titleStyle = {
+  'background-color': '#1890ff',
+  'font-size': '10vh',
+  width: 'auto',
+  'text-align': 'center'
+};
+
+const positionStyle = {
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -10%)',
+  position: 'absolute',
+  width: '100%'
+};
+const subtitleStyle = {
+  ...titleStyle,
+  'font-size': '3vh',
+  padding: '5px'
+};
+
+const smallSubtitleStyle = {
+  ...subtitleStyle,
+  'font-size': '2.5vh'
+};
+
+const hstyle = {
+  'text-align': 'center'
+};
+>>>>>>> Add Hero Component
 
 const ScrapdHomeView = () => {
   const intro = [
@@ -43,11 +80,15 @@ const ScrapdHomeView = () => {
 
   return (
     <div>
+<<<<<<< HEAD
       <ScrapdHero
         title="scrAPD"
         subtitle1="Safety data, collected automatically for you"
         subtitle2="ScrAPD scrapes the web for traffic fatality data, making it accessible to all"
       />
+=======
+        <ScrapdHero title="scrAPD" subtitle1="Safety data, collected automatically for you" subtitle2="ScrAPD scrapes the web for traffic fatality data, making it accessible to all"/>
+>>>>>>> Add Hero Component
       <ScrapdHomeSection
         title="What is ScrAPD?"
         text={intro}
