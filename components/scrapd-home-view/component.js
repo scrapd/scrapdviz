@@ -1,4 +1,5 @@
 import ScrapdHomeSection from '../scrapd-home-section/component';
+import ScrapdHero from '../scrapd-hero/component.js';
 
 const headerStyle = {
   height: '80vh',
@@ -76,22 +77,7 @@ const ScrapdHomeView = () => {
 
   return (
     <div>
-      <div style={headerStyle}>
-        <div style={positionStyle}>
-          <h1 style={hstyle}>
-            <span style={titleStyle}>ScrAPD</span>
-          </h1>
-          <h2 style={hstyle}>
-            <span style={subtitleStyle}>Safety data, collected automatically for you</span>
-          </h2>
-          <h3 style={hstyle}>
-            <span style={smallSubtitleStyle}>
-              ScrAPD scrapes the web for traffic fatality data, making it accessible to all
-            </span>
-          </h3>
-        </div>
-      </div>
-      &nbsp;
+        <ScrapdHero title="scrAPD" subtitle1="Safety data, collected automatically for you" subtitle2="ScrAPD scrapes the web for traffic fatality data, making it accessible to all"/>
       <ScrapdHomeSection
         title="What is ScrAPD?"
         text={intro}
