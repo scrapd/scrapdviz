@@ -1,38 +1,5 @@
 import ScrapdHomeSection from '../scrapd-home-section/component';
-
-const headerStyle = {
-  height: '80vh',
-  'background-image': 'url("https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/177348.jpg")'
-};
-
-const titleStyle = {
-  'background-color': '#1890ff',
-  'font-size': '10vh',
-  width: 'auto',
-  'text-align': 'center'
-};
-
-const positionStyle = {
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -10%)',
-  position: 'absolute',
-  width: '100%'
-};
-const subtitleStyle = {
-  ...titleStyle,
-  'font-size': '3vh',
-  padding: '5px'
-};
-
-const smallSubtitleStyle = {
-  ...subtitleStyle,
-  'font-size': '2.5vh'
-};
-
-const hstyle = {
-  'text-align': 'center'
-};
+import ScrapdHero from '../scrapd-hero/component.js';
 
 const ScrapdHomeView = () => {
   const intro = [
@@ -76,22 +43,11 @@ const ScrapdHomeView = () => {
 
   return (
     <div>
-      <div style={headerStyle}>
-        <div style={positionStyle}>
-          <h1 style={hstyle}>
-            <span style={titleStyle}>ScrAPD</span>
-          </h1>
-          <h2 style={hstyle}>
-            <span style={subtitleStyle}>Safety data, collected automatically for you</span>
-          </h2>
-          <h3 style={hstyle}>
-            <span style={smallSubtitleStyle}>
-              ScrAPD scrapes the web for traffic fatality data, making it accessible to all
-            </span>
-          </h3>
-        </div>
-      </div>
-      &nbsp;
+      <ScrapdHero
+        title="scrAPD"
+        subtitle1="Safety data, collected automatically for you"
+        subtitle2="ScrAPD scrapes the web for traffic fatality data, making it accessible to all"
+      />
       <ScrapdHomeSection
         title="What is ScrAPD?"
         text={intro}
