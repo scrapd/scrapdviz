@@ -51,6 +51,11 @@ class ScrapdLayout extends React.Component {
               selectedKeys={[this.props.view]}
               style={{ lineHeight: '64px' }}
             >
+              <Menu.Item key="home">
+                <Link href="/home">
+                  <a>Home</a>
+                </Link>{' '}
+              </Menu.Item>
               <Menu.Item key="apdView">
                 <Link href="/">
                   <a>APD</a>
@@ -59,11 +64,6 @@ class ScrapdLayout extends React.Component {
               <Menu.Item key="archiveView">
                 <Link href="/archives">
                   <a>Archives</a>
-                </Link>{' '}
-              </Menu.Item>
-              <Menu.Item key="developers">
-                <Link href="/developers">
-                  <a>For Developers</a>
                 </Link>{' '}
               </Menu.Item>
             </Menu>

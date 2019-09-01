@@ -55,13 +55,13 @@ const contributionSection = {
 const section = {
   width: '75%',
   display: 'inline-block',
-  'padding-left': '5%',
+  paddingLeft: '5%',
   float: 'bottom',
   overflow: 'hidden',
-  'vertical-align': 'middle'
+  verticalAlign: 'middle'
 };
 
-const ScrapdDeveloperView = () => {
+const ScrapdHomeView = () => {
   return (
     <div>
       <div style={headerStyle}>
@@ -189,4 +189,4 @@ const ScrapdDeveloperView = () => {
   );
 };
 
-export default ScrapdDeveloperView;
+export default ScrapdHomeView;
