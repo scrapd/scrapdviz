@@ -47,6 +47,7 @@ const ScrapdHomeView = () => {
         title="scrAPD"
         subtitle1="Safety data, collected automatically for you"
         subtitle2="ScrAPD scrapes the web for traffic fatality data, making it accessible to all"
+        url="https://res.cloudinary.com/ab91/image/upload/v1567305230/scrAPD%20Viz/hero_image.png"
       />
       <ScrapdHomeSection
         title="What is ScrAPD?"

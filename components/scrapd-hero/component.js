@@ -1,49 +1,49 @@
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
 
-const heroImage = {
+const HeroImage = styled.div(props => ({
   height: '500px',
-  'background-image': 'url("https://res.cloudinary.com/ab91/image/upload/v1567305230/scrAPD%20Viz/hero_image.png")',
-  'background-size': 'cover'
-};
+  backgroundImage: 'url(' + props.url + ')',
+  backgroundSize: 'cover'
+}));
 
-const text = {
+const Text = styled.div({
   position: 'relative',
   top: '40%'
-};
+});
 
-const titleStyle = {
-  'font-size': '10vh',
+const Title = styled.h1({
+  fontSize: '10vh',
   width: 'auto',
-  'text-align': 'center',
+  textAlign: 'center',
   color: 'white',
-  'font-weight': 'bold',
-  'margin-bottom': '0px'
-};
+  fontWeight: 'bold',
+  marginBottom: '0px'
+});
 
-const subtitleStyle = {
-  'font-size': '3vh',
-  'text-align': 'center',
+const Subtitle = styled.h2({
+  fontSize: '1em',
+  textAlign: 'center',
   color: 'white',
-  'font-weight': 'bold'
-};
+  fontWeight: 'bold'
+});
 
 const ScrapdHero = props => {
   return (
-    <div>
-      <div style={heroImage}>
-        <div style={text}>
-          <h1 style={titleStyle}>{props.title}</h1>
-          <h3 style={subtitleStyle}>{props.subtitle1}</h3>
-          <h3 style={subtitleStyle}>{props.subtitle2}</h3>
-        </div>
-      </div>
-    </div>
+    <HeroImage url={props.url}>
+      <Text>
+        <Title>{props.title}</Title>
+        <Subtitle> {props.subtitle1}</Subtitle>
+        <Subtitle> {props.subtitle2}</Subtitle>
+      </Text>
+    </HeroImage>
   );
 };
 
 ScrapdHero.propTypes = {
   title: PropTypes.string,
   subtitle1: PropTypes.string,
-  subtitle2: PropTypes.string
+  subtitle2: PropTypes.string,
+  url: PropTypes.string
 };
 export default ScrapdHero;
