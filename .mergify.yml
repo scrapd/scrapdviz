@@ -1,5 +1,6 @@
 pull_request_rules:
-- actions:
+- name: master
+  actions:
     merge:
       method: squash
       rebase_fallback: merge
@@ -10,4 +11,15 @@ pull_request_rules:
   - 'status-success=ci/circleci: prepare'
   - 'status-success=ci/circleci: lint'
   - 'status-success=ci/circleci: test'
-  name: master
+  
+- name: automatic merge from dependabot
+  conditions:
+    - author~=^dependabot(|-preview)\[bot\]$
+    - label!=no-mergify
+    - 'status-success=ci/circleci: prepare'
+    - 'status-success=ci/circleci: lint'
+    - 'status-success=ci/circleci: test'
+  actions:
+    merge:
+      method: squash
+      rebase_fallback: merge
