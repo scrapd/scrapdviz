@@ -1,25 +1,26 @@
+actions: &actions
+  actions:
+    merge:
+      method: squash
+      rebase_fallback: merge
+
 pull_request_rules:
-- name: master
-  actions:
-    merge:
-      method: squash
-      rebase_fallback: merge
-  conditions:
-  - base=master
-  - label!=no-mergify
-  - '#approved-reviews-by>=1'
-  - 'status-success=ci/circleci: prepare'
-  - 'status-success=ci/circleci: lint'
-  - 'status-success=ci/circleci: test'
-  
-- name: automatic merge from dependabot
-  conditions:
-    - author~=^dependabot(|-preview)\[bot\]$
-    - label!=no-mergify
-    - 'status-success=ci/circleci: prepare'
-    - 'status-success=ci/circleci: lint'
-    - 'status-success=ci/circleci: test'
-  actions:
-    merge:
-      method: squash
-      rebase_fallback: merge
+  - name: master
+
+    <<: *actions
+    conditions:
+      - base=master
+      - label!=no-mergify
+      - "#approved-reviews-by>=1"
+      - "status-success=ci/circleci: prepare"
+      - "status-success=ci/circleci: lint"
+      - "status-success=ci/circleci: test"
+
+  - name: automatic merge from dependabot
+    <<: *actions
+    conditions:
+      - author~=^dependabot(|-preview)\[bot\]$
+      - label!=no-mergify
+      - "status-success=ci/circleci: prepare"
+      - "status-success=ci/circleci: lint"
+      - "status-success=ci/circleci: test"
