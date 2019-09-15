@@ -49,42 +49,28 @@ const ScrapdHomeView = () => {
         subtitle2="ScrAPD scrapes the web for traffic fatality data, making it accessible to all"
         url="https://res.cloudinary.com/ab91/image/upload/v1567305230/scrAPD%20Viz/hero_image.png"
       />
-      <ScrapdHomeSection
-        title="What is ScrAPD?"
-        text={intro}
-        img={
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Square_on_plane.svg/1024px-Square_on_plane.svg.png'
-        }
-      />
+      <ScrapdHomeSection title="What is ScrAPD?" text={intro} img={'/static/images/photos/scrapd_docs.jpg'} />
       <ScrapdHomeSection
         title="How do I view the data?"
         text={viewData}
-        img={
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Square_on_plane.svg/1024px-Square_on_plane.svg.png'
-        }
+        img={'/static/images/photos/scrapd_viz.jpg'}
         reverse
       />
       <ScrapdHomeSection
         title="How does ScrAPD work?"
         text={howItWorks}
-        img={
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Square_on_plane.svg/1024px-Square_on_plane.svg.png'
-        }
+        img={'/static/images/photos/scrapd_org_docs.jpg'}
       />
       <ScrapdHomeSection
         title="How do I grab ALL the data?"
         text={grabData}
-        img={
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Square_on_plane.svg/1024px-Square_on_plane.svg.png'
-        }
+        img={'/static/images/photos/data_world.jpg'}
         reverse
       />
       <ScrapdHomeSection
         title="What if I want to contribute?"
         text={contribute}
-        img={
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Square_on_plane.svg/1024px-Square_on_plane.svg.png'
-        }
+        img={'/static/images/photos/scrapd_gh_org.jpg'}
       />
     </div>
   );
