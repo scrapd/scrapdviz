@@ -49,24 +49,24 @@ const ScrapdHomeView = () => {
         subtitle2="ScrAPD scrapes the web for traffic fatality data, making it accessible to all"
         url="https://res.cloudinary.com/ab91/image/upload/v1567305230/scrAPD%20Viz/hero_image.png"
       />
-      <ScrapdHomeSection title="What is ScrAPD?" text={intro} img={'/static/images/photos/image_1.jpg'} />
+      <ScrapdHomeSection title="What is ScrAPD?" text={intro} img={'/static/images/photos/scrapd_docs.jpg'} />
       <ScrapdHomeSection
         title="How do I view the data?"
         text={viewData}
-        img={'/static/images/photos/image_2.jpg'}
+        img={'/static/images/photos/scrapd_viz.jpg'}
         reverse
       />
-      <ScrapdHomeSection title="How does ScrAPD work?" text={howItWorks} img={'/static/images/photos/image_3.jpg'} />
+      <ScrapdHomeSection title="How does ScrAPD work?" text={howItWorks} img={'/static/images/photos/scrapd_org_docs.jpg'} />
       <ScrapdHomeSection
         title="How do I grab ALL the data?"
         text={grabData}
-        img={'/static/images/photos/image_4.jpg'}
+        img={'/static/images/photos/data_world.jpg'}
         reverse
       />
       <ScrapdHomeSection
         title="What if I want to contribute?"
         text={contribute}
-        img={'/static/images/photos/image_5.jpg'}
+        img={'/static/images/photos/scrapd_gh_org.jpg'}
       />
     </div>
   );
