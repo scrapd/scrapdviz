@@ -3,42 +3,69 @@ import ScrapdHero from '../scrapd-hero/component.js';
 
 const ScrapdHomeView = () => {
   const intro = [
-    <p key="0">
-      ScrAPD is a collection of tools to automatically collect information about traffic fatalities in the city of
-      Austin, TX and render it on a modern dashboard.
-    </p>,
-    <p key="1">
-      Visit our documentation page to learn more about what ScrAPD does, how it works, and who it is helping today.
-    </p>
+    <div key="0">
+      <p>
+        ScrAPD is a collection of tools to automatically collect information about traffic fatalities in the city of
+        Austin, TX and render it on a modern dashboard.
+      </p>
+      <p>
+        ScrAPD provides information to help understand traffic fatality patterns and empower decision makers to
+        implement solutions to prevent them.
+      </p>
+    </div>
   ];
   const viewData = [
-    <p key="0">Spreadsheets can be difficult to understand. ScrAPDViz solves this problem.</p>,
-    <p key="1">
-      Charts, graphs, and other data visualizations help ScrAPDViz simplify large datasets into a format anyone can
-      understand.
-    </p>
+    <div key="0">
+      <p>Spreadsheets can be confusing and hard to manipulate. ScrAPDviz solves this problem.</p>
+      <p>Using relevant metrics and categorization, ScrAPDviz makes it straightforward to comprehend the data.</p>
+    </div>
   ];
-  const howItWorks = [
-    <p key="0">Info about the tool</p>,
-    <p key="1">Visit our documentation page on the ScrAPD scraper and try it yourself!</p>
+  // const howItWorks = [
+  //   <div key="0">
+  //     <p>Info about the tool</p>
+  //     <p>Visit our documentation page on the ScrAPD scraper and try it yourself!</p>
+  //   </div>
+  // ];
+  const grabData = [
+    <div key="0">
+      <p>
+        We are fully transparent with our data sets. We publish them on{' '}
+        <a href="https://github.com/scrapd/datasets/tree/master/datasets" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>{' '}
+        and{' '}
+        <a href="https://data.world/remy-greinhofer/scrapd" target="_blank" rel="noopener noreferrer">
+          Data.World
+        </a>{' '}
+        .
+      </p>
+      <p>
+        You can also use the buttons in the toolbar to retrieve a subset of data bounded by the dates you select in the
+        date picker. The available formats are JSON and CSV.
+      </p>
+    </div>
   ];
-  const grabData = [<p key="0">[Info about the data.world]</p>, <p key="1">[more]</p>];
   const contribute = [
-    <p key="0">
-      Scrapd has documentation available at this link: <a href="https://docs.scrapd.org">Docs</a>.
-    </p>,
-    <p key="1">
-      Scrapd is open-source. You can find the scraping tool we use to retrieve data at this link:
-      <a href="https://github.com/scrapd/scrapd">Scraper Source</a>.
-    </p>,
-    <p key="2">
-      You can also find the source code for this site at this link:
-      <a href="https://github.com/scrapdviz/scrapdviz">Visualization Source</a>.
-    </p>,
-    <p key="3">
-      ScrAPD is a project of Open Austin, a Code for America brigade. You can find more data about the organization at
-      this link: <a href="https://open-austin.org">Open Austin</a>.
-    </p>
+    <div key="0">
+      <p>
+        All the ScrAPD projects are Open Source and hosted in the{' '}
+        <a href="https://github.com/scrapd">ScrAPD organization</a> on Github. We welcome curious and compasionate
+        collaborators, as well as meaningful contributions
+      </p>
+      <p>
+        The general documentation is available <a href="https://docs.scrapd.org">here</a>.
+      </p>
+      <p>
+        You can find the scraping tool we use to retrieve data at this{' '}
+        <a href="https://github.com/scrapd/scrapd"> link</a>. and the source code for this dashboard{' '}
+        <a href="https://github.com/scrapdviz/scrapdviz"> here</a>.
+      </p>
+      <p>
+        ScrAPD is a project developed mostly by vonlunteers from Open Austin, a local organization solving civic
+        problems using design and technology. You can learn more about it on their{' '}
+        <a href="https://open-austin.org">website</a>.
+      </p>
+    </div>
   ];
 
   return (
@@ -51,26 +78,17 @@ const ScrapdHomeView = () => {
       />
       <ScrapdHomeSection title="What is ScrAPD?" text={intro} img={'/static/images/photos/scrapd_docs.jpg'} />
       <ScrapdHomeSection
-        title="How do I view the data?"
+        title="Visualizing the data"
         text={viewData}
         img={'/static/images/photos/scrapd_viz.jpg'}
         reverse
       />
+      <ScrapdHomeSection title="Data Sets" text={grabData} img={'/static/images/photos/data_world.jpg'} />
       <ScrapdHomeSection
-        title="How does ScrAPD work?"
-        text={howItWorks}
-        img={'/static/images/photos/scrapd_org_docs.jpg'}
-      />
-      <ScrapdHomeSection
-        title="How do I grab ALL the data?"
-        text={grabData}
-        img={'/static/images/photos/data_world.jpg'}
-        reverse
-      />
-      <ScrapdHomeSection
-        title="What if I want to contribute?"
+        title="Contributing"
         text={contribute}
         img={'/static/images/photos/scrapd_gh_org.jpg'}
+        reverse
       />
     </div>
   );

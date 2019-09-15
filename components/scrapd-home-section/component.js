@@ -5,7 +5,7 @@ const ScrapdHomeSection = props => {
   const Section = styled.div({
     border: 'medium solid gray',
     borderRadius: '20px',
-    margin: '2em 0'
+    margin: '3em 0'
   });
 
   const SectionTitle = styled.div({
@@ -16,7 +16,9 @@ const ScrapdHomeSection = props => {
   const SectionTitleSpan = styled.span({
     backgroundColor: 'white',
     padding: '10px',
-    fontSize: '1.5em'
+    fontSize: '2.75em',
+    fontWeight: 'bold',
+    color: '#003CFF'
   });
 
   const Content = styled.div(props => ({
@@ -56,7 +58,7 @@ ScrapdHomeSection.propTypes = {
   img: PropTypes.string,
   reverse: PropTypes.bool,
   title: PropTypes.string,
-  text: PropTypes.string
+  text: PropTypes.array
 };
 
 export default ScrapdHomeSection;
