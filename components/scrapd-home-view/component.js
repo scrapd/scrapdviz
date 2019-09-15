@@ -56,7 +56,11 @@ const ScrapdHomeView = () => {
         img={'/static/images/photos/scrapd_viz.jpg'}
         reverse
       />
-      <ScrapdHomeSection title="How does ScrAPD work?" text={howItWorks} img={'/static/images/photos/scrapd_org_docs.jpg'} />
+      <ScrapdHomeSection
+        title="How does ScrAPD work?"
+        text={howItWorks}
+        img={'/static/images/photos/scrapd_org_docs.jpg'}
+      />
       <ScrapdHomeSection
         title="How do I grab ALL the data?"
         text={grabData}
