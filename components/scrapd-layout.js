@@ -51,8 +51,13 @@ class ScrapdLayout extends React.Component {
               selectedKeys={[this.props.view]}
               style={{ lineHeight: '64px' }}
             >
-              <Menu.Item key="apdView">
+              <Menu.Item key="home">
                 <Link href="/">
+                  <a>Home</a>
+                </Link>{' '}
+              </Menu.Item>
+              <Menu.Item key="apdView">
+                <Link href="/apd">
                   <a>APD</a>
                 </Link>{' '}
               </Menu.Item>
@@ -95,7 +100,7 @@ class ScrapdLayout extends React.Component {
 }
 
 ScrapdLayout.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.object,
   date_filter: PropTypes.object,
   view: PropTypes.string,
   selectView: PropTypes.func.isRequired
