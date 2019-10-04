@@ -12,9 +12,9 @@ pull_request_rules:
   - 'status-success=ci/circleci: lint'
   - 'status-success=ci/circleci: test'
   
-- name: automatic merge from dependabot
+- name: automatic merge from dependabot or snyk-bot
   conditions:
-    - author~=^dependabot(|-preview)\[bot\]$
+    - author~=^(snyk-bot|dependabot)(|-preview)(\[bot\])?$
     - label!=no-mergify
     - 'status-success=ci/circleci: prepare'
     - 'status-success=ci/circleci: lint'
