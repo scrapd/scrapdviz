@@ -5,8 +5,8 @@ const ScrapdHomeView = () => {
   const intro = [
     <div key="0">
       <p>
-        ScrAPD is a collection of tools that continuously and automatically collects traffic fatality information for the city
-        of Austin, TX. The aggregated data is then made available for easy viewing in our ScrAPD dashboard.
+        ScrAPD is a collection of tools that continuously and automatically collects traffic fatality information from
+        the city of Austin, TX. The aggregated data is then made available for easy viewing in our ScrAPD dashboard.
       </p>
       <p>
         ScrAPD’s constantly updated dashboard makes it easy for individuals and organizations advocating towards a safer
@@ -66,7 +66,8 @@ const ScrapdHomeView = () => {
         <a href="https://github.com/scrapdviz/scrapdviz"> here</a>.
       </p>
       <p>
-        ScrAPD is a project developed by volunteers, mostly from Open Austin, a local organization solving civic problems. You can learn more about it on their <a href="https://open-austin.org">website</a>.
+        ScrAPD is a project developed by volunteers, mostly from Open Austin, a local organization solving civic
+        problems. You can learn more about it on their <a href="https://open-austin.org">website</a>.
       </p>
     </div>
   ];
