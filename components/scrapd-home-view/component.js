@@ -5,11 +5,11 @@ const ScrapdHomeView = () => {
   const intro = [
     <div key="0">
       <p>
-        ScrAPD is a web scraper that continuously and automatically collects traffic fatality information for the city
-        of Austin, TX. The aggregated data is then made available for easy viewing in our scrAPD dashboard.
+        ScrAPD is a collection of tools that continuously and automatically collects traffic fatality information for the city
+        of Austin, TX. The aggregated data is then made available for easy viewing in our ScrAPD dashboard.
       </p>
       <p>
-        ScrAPD’s constantly updated dashboard makes it easy for individuals and organizations lobbying towards a safer
+        ScrAPD’s constantly updated dashboard makes it easy for individuals and organizations advocating towards a safer
         city to have access to the latest traffic fatality data.
       </p>
     </div>
@@ -34,11 +34,11 @@ const ScrapdHomeView = () => {
   const grabData = [
     <div key="0">
       <p>
-        The scrAPD web scraper generates data sets which populate our scrAPD dashboard. Use the “JSON” and “CSV” buttons
+        The ScrAPD web scraper generates data sets which populate our ScrAPD dashboard. Use the “JSON” and “CSV” buttons
         by the date picker to download a data set for a specified timeframe in the selected format.
       </p>
       <p>
-        The scrAPD team is committed to transparency. You can find our data sets published on{' '}
+        The ScrAPD team is committed to transparency. You can find our data sets published on{' '}
         <a href="https://github.com/scrapd/datasets/tree/master/datasets" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>{' '}
@@ -52,7 +52,7 @@ const ScrapdHomeView = () => {
   const contribute = [
     <div key="0">
       <p>
-        The ScrAPD web scraper and dashboard are Open Source and hosted in the{' '}
+        The ScrAPD ecosystem is Open Source and hosted in the{' '}
         <a href="https://github.com/scrapd">ScrAPD organization</a> on Github. We welcome curious, compassionate
         collaborators to make meaningful contributions to the project{' '}
       </p>
@@ -66,8 +66,7 @@ const ScrapdHomeView = () => {
         <a href="https://github.com/scrapdviz/scrapdviz"> here</a>.
       </p>
       <p>
-        ScrAPD is a project developed mostly by volunteers from Open Austin, a local organization solving civic problems
-        using design and technology. You can learn more about it on their <a href="https://open-austin.org">website</a>.
+        ScrAPD is a project developed by volunteers, mostly from Open Austin, a local organization solving civic problems. You can learn more about it on their <a href="https://open-austin.org">website</a>.
       </p>
     </div>
   ];
@@ -75,20 +74,20 @@ const ScrapdHomeView = () => {
   return (
     <div>
       <ScrapdHero
-        title="scrAPD"
-        subtitle1="Austin’s latest traffic fatality data, in one spot"
+        title="ScrAPD"
+        subtitle1="Visualize Austin traffic fatalities from another angle"
         // May delete subtitle 2
         subtitle2=""
         url="/static/images/photos/hero_image.png"
       />
       <ScrapdHomeSection title="What is ScrAPD?" text={intro} img={'/static/images/photos/scrapd_docs.jpg'} />
+      <ScrapdHomeSection title="Data Sets" text={grabData} img={'/static/images/photos/data_world.jpg'} />
       <ScrapdHomeSection
         title="Visualizing the data"
         text={viewData}
         img={'/static/images/photos/scrapd_viz.jpg'}
         reverse
       />
-      <ScrapdHomeSection title="Data Sets" text={grabData} img={'/static/images/photos/data_world.jpg'} />
       <ScrapdHomeSection
         title="Contributing"
         text={contribute}
