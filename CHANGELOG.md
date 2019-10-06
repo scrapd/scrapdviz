@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[1.0.0]] - 2019-10-06
+
+### Added
+
+- Add automation to incorporate security fixes automatically. [#164]
+- Add home page. [#149]
+- Add support for Google Tag. [#167]
+
 ## [[0.4.0]] - 2019-07-10
 
 ### Added
@@ -81,3 +89,6 @@ This is the first complete release of ScrAPDviz.
 [#138]: https://github.com/scrapd/scrapdviz/pull/138
 [#139]: https://github.com/scrapd/scrapdviz/pull/139
 [#140]: https://github.com/scrapd/scrapdviz/pull/140
+[#149]: https://github.com/scrapd/scrapdviz/pull/149
+[#164]: https://github.com/scrapd/scrapdviz/pull/164
+[#167]: https://github.com/scrapd/scrapdviz/pull/167
