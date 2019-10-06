@@ -1,10 +1,14 @@
 import App, { Container } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
+import Router from 'next/router';
 import ServiceWorker from '../components/service-worker';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import { initializeStore } from '../redux/store';
+import * as gtag from '../lib/gtag';
+
+Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
 class CustomApp extends App {
   static async getInitialProps({ Component, ctx }) {
