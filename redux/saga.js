@@ -3,7 +3,7 @@ import { all, call, delay, put, takeLatest } from 'redux-saga/effects'
 import { actionTypes, fetchArchives, fetchData } from './store'
 
 // Use this for mocking only.
-// import { fatalities } from '../mock-api/mock-data'
+import { fatalities } from '../mock-api/mock-data'
 
 function isInRange(date, from_, to) {
   const d = moment(date, 'MM/DD/YYYY');
@@ -14,6 +14,30 @@ function isInRange(date, from_, to) {
     return false;
   }
   return true;
+}
+
+function flattenFatalities(fatalities) {
+  let datamap = new Array()
+  for (var i = 0; i < fatalities.length; i++) {
+    for (var j = 0; j < fatalities[i]["fatalities"].length; j++) {
+      let data = Object();
+      data["case"] = fatalities[i]["case"];
+      data["crash"] = fatalities[i]["crash"];
+      data["date"] = fatalities[i]["date"];
+      data["link"] = fatalities[i]["link"];
+      data["location"] = fatalities[i]["location"];
+      data["longitude"] = fatalities[i]["longitude"];
+      data["notes"] = fatalities[i]["notes"];
+      data["time"] = fatalities[i]["time"];
+
+      data["age"] = fatalities[i]["fatalities"][j]["age"];
+      data["ethnicity"] = fatalities[i]["fatalities"][j]["ethnicity"];
+      data["name"] = fatalities[i]["fatalities"][j]["first"] + " " + fatalities[i]["fatalities"][j]["middle"] + " " + fatalities[i]["fatalities"][j]["last"] + " " + fatalities[i]["fatalities"][j]["generation"];
+      data["gender"] = fatalities[i]["fatalities"][j]["gender"];
+      datamap.push(data)
+    }
+  }
+  return datamap;
 }
 
 function filterFatalities(fatalities, from_, to) {
@@ -33,10 +57,11 @@ function* watchFetchDataAsync() {
 
 function* workerFetchDataAsync(action) {
   const { from_, to } = action.payload.date_filter;
-  const endpoint = 'https://raw.githubusercontent.com/scrapd/datasets/master/datasets/fatalities-all-augmented.json';
-  const response = yield call(fetch, endpoint);
-  const fatalities = yield call([response, "json"]);
-  const f = filterFatalities(fatalities, from_, to);
+  // const endpoint = 'https://raw.githubusercontent.com/scrapd/datasets/master/datasets/fatalities-all-augmented.json';
+  // const response = yield call(fetch, endpoint);
+  // const fatalities = yield call([response, "json"]);
+  const flat_f = flattenFatalities(fatalities);
+  const f = filterFatalities(flat_f, from_, to);
   // yield delay(1000)
   yield put(fetchData(f));
 }
