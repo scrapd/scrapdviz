@@ -1405,10 +1405,10 @@ export const fatalities = [
         "middle": ""
       }
     ],
-    "latitude": 0.0,
+    "latitude": 30.24539,
     "link": "http://austintexas.gov/news/traffic-fatality-3-4",
     "location": "3600 block of South Capital of Texas Highway SB",
-    "longitude": 0.0,
+    "longitude": -97.80285,
     "notes": "The preliminary investigation shows that the driver of a silver, 2018 KIA was traveling in the center lane of the 3600 block of South Capital of Texas Highway SB when the car collided with Jesus Servantez, a pedestrian in the roadway. The driver remained at the scene and told investigators that he did not see Servantez prior to the crash.\n\n\tJesus Servantez was transported to Saint David\u2019s South Austin Medical Center where he succumbed to his injuries on January 21, 2019. No charges are expected to be filed.",
     "time": "21:37:00"
   },

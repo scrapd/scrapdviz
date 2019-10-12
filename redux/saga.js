@@ -24,6 +24,7 @@ function flattenFatalities(fatalities) {
       data["case"] = fatalities[i]["case"];
       data["crash"] = fatalities[i]["crash"];
       data["date"] = fatalities[i]["date"];
+      data["latitude"] = fatalities[i]["latitude"];
       data["link"] = fatalities[i]["link"];
       data["location"] = fatalities[i]["location"];
       data["longitude"] = fatalities[i]["longitude"];
@@ -32,8 +33,8 @@ function flattenFatalities(fatalities) {
 
       data["age"] = fatalities[i]["fatalities"][j]["age"];
       data["ethnicity"] = fatalities[i]["fatalities"][j]["ethnicity"];
-      data["name"] = fatalities[i]["fatalities"][j]["first"] + " " + fatalities[i]["fatalities"][j]["middle"] + " " + fatalities[i]["fatalities"][j]["last"] + " " + fatalities[i]["fatalities"][j]["generation"];
       data["gender"] = fatalities[i]["fatalities"][j]["gender"];
+      data["name"] = fatalities[i]["fatalities"][j]["first"] + " " + fatalities[i]["fatalities"][j]["middle"] + " " + fatalities[i]["fatalities"][j]["last"] + " " + fatalities[i]["fatalities"][j]["generation"];
       datamap.push(data)
     }
   }

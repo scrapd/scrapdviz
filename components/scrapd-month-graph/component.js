@@ -18,8 +18,8 @@ const ScrapdMonthGraph = props => {
   datamap['December'] = 0;
 
   for (var i = 0; i < props.fatalities.length; i++) {
-    const date = props.fatalities[i]['Date'];
-    const month = moment(date, ['MM/DD/YYYY']).month();
+    const date = props.fatalities[i]['date'];
+    const month = moment(date, ['YYYY-MM-DD']).month();
     const monthsOfYear = [
       'January',
       'February',

@@ -124,16 +124,16 @@ function clusterMarker(coordinates, count) {
 function SingleMarker(fatality) {
   let Icon;
   let SingleMarkerStyle = markerStyle;
-  if (fatality.Type == 'motorcycle') {
+  if (fatality.type == 'motorcycle') {
     SingleMarkerStyle = markerStyleMotorcycle;
     Icon = <FontAwesomeIcon icon={faMotorcycle} />;
-  } else if (fatality.Type == 'pedestrian') {
+  } else if (fatality.type == 'pedestrian') {
     SingleMarkerStyle = markerStylePedestrian;
     Icon = <FontAwesomeIcon icon={faWalking} />;
-  } else if (fatality.Type == 'bicycle') {
+  } else if (fatality.type == 'bicycle') {
     SingleMarkerStyle = markerStyleBicycle;
     Icon = <FontAwesomeIcon icon={faBiking} />;
-  } else if (fatality.Type == 'motor vehicle') {
+  } else if (fatality.type == 'motor vehicle') {
     SingleMarkerStyle = markerStyleMotor;
     Icon = <FontAwesomeIcon icon={faCarCrash} />;
   }
@@ -142,13 +142,13 @@ function SingleMarker(fatality) {
   // possible to simply return a div or a similar element. So to cheat, I put all the invalid markers at the prime
   // meridian (0,0).
   // A cleaner way would be to filter out invalid coordinates in the `map` function calling this one.
-  if (fatality.Longitude == null || fatality.Latitude == null) {
-    console.log('Invalid marker coordinates: [' + fatality.Longitude + ', ' + fatality.Latitude + ']');
-    return <Marker key={fatality.Case} style={SingleMarkerStyle} coordinates={[0, 0]} />;
+  if (fatality.longitude == 0 || fatality.latitude == 0) {
+    console.log('Invalid marker coordinates: [' + fatality.longitude + ', ' + fatality.latitude + ']');
+    return <Marker key={fatality.case} style={SingleMarkerStyle} coordinates={[0, 0]} />;
   }
 
   return (
-    <Marker key={fatality.Case} style={SingleMarkerStyle} coordinates={[fatality.Longitude, fatality.Latitude]}>
+    <Marker key={fatality.case} style={SingleMarkerStyle} coordinates={[fatality.longitude, fatality.latitude]}>
       {Icon}
     </Marker>
   );
