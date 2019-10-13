@@ -46,7 +46,7 @@ class ScrapdGrid extends React.Component {
         dataIndex: 'date',
         key: 'date',
         defaultSortOrder: 'descend',
-        sorter: (a, b) => new moment(a.date) - new moment(b.Date)
+        sorter: (a, b) => new moment(a.date) - new moment(b.date)
       },
       { title: 'Time', dataIndex: 'time', key: 'time' },
       { title: 'Location', dataIndex: 'location', key: 'location' },

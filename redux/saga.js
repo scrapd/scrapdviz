@@ -6,7 +6,7 @@ import { actionTypes, fetchArchives, fetchData } from './store'
 // import { fatalities } from '../mock-api/mock-data'
 
 function isInRange(date, from_, to) {
-  const d = moment(date, 'MM/DD/YYYY');
+  const d = moment(date, 'YYYY-MM-DD');
   if (d.isBefore(from_)) {
     return false;
   }
@@ -44,7 +44,7 @@ function flattenFatalities(fatalities) {
 function filterFatalities(fatalities, from_, to) {
   let data = new Array()
   for (var i = 0; i < fatalities.length; i++) {
-    const d = fatalities[i]['Date'];
+    const d = fatalities[i]['date'];
     if (isInRange(d, from_, to)) {
       data.push(fatalities[i]);
     }
