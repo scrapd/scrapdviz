@@ -14,7 +14,7 @@ const ScrapdFatalityCounter = props => {
     casesArray.push(props.fatalities[i].case);
   }
 
-  let caseCount = new Set(casesArray).size;
+  let crashCount = new Set(casesArray).size;
 
   const CounterDiv = styled.div(
     mq({
@@ -45,7 +45,7 @@ const ScrapdFatalityCounter = props => {
     <CounterDiv>
       <CountStyle>{fatalityCount}</CountStyle>
       <GraphTitle>Fatalities</GraphTitle>
-      <CountStyle>{caseCount}</CountStyle>
+      <CountStyle>{crashCount}</CountStyle>
       <GraphTitle>Crashes</GraphTitle>
     </CounterDiv>
   );
