@@ -14,23 +14,7 @@ const ScrapdHomeView = () => {
       </p>
     </div>
   ];
-  const viewData = [
-    <div key="0">
-      <p>
-        In addition to our data sets, you can also view the data in a more visual way with clearly labeled charts and
-        graphs.
-      </p>
-      <p>
-        Review distributions by gender, ethnicity, age, and other categories with our easy-to-read data visualizations.
-      </p>
-    </div>
-  ];
-  // const howItWorks = [
-  //   <div key="0">
-  //     <p>Info about the tool</p>
-  //     <p>Visit our documentation page on the ScrAPD scraper and try it yourself!</p>
-  //   </div>
-  // ];
+
   const grabData = [
     <div key="0">
       <p>
@@ -49,6 +33,19 @@ const ScrapdHomeView = () => {
       </p>
     </div>
   ];
+
+  const viewData = [
+    <div key="0">
+      <p>
+        In addition to our data sets, you can also view the data in a more visual way with clearly labeled charts and
+        graphs.
+      </p>
+      <p>
+        Review distributions by gender, ethnicity, age, and other categories with our easy-to-read data visualizations.
+      </p>
+    </div>
+  ];
+
   const contribute = [
     <div key="0">
       <p>

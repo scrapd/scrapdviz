@@ -9,6 +9,13 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`));
 const ScrapdFatalityCounter = props => {
   const fatalityCount = props.fatalities.length;
 
+  let casesArray = new Array();
+  for (var i = 0; i < props.fatalities.length; i++) {
+    casesArray.push(props.fatalities[i].case);
+  }
+
+  let crashCount = new Set(casesArray).size;
+
   const CounterDiv = styled.div(
     mq({
       display: 'inline-block',
@@ -26,17 +33,19 @@ const ScrapdFatalityCounter = props => {
     width: '400px',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: '14rem'
+    fontSize: '4.5rem'
   });
 
   const GraphTitle = styled.p({
-    fontSize: '3em',
+    fontSize: '2.5em',
     textAlign: 'center'
   });
 
   return (
     <CounterDiv>
       <CountStyle>{fatalityCount}</CountStyle>
+      <GraphTitle>Fatalities</GraphTitle>
+      <CountStyle>{crashCount}</CountStyle>
       <GraphTitle>Crashes</GraphTitle>
     </CounterDiv>
   );
