@@ -12,8 +12,8 @@ const ScrapdTimeGraph = props => {
   datamap['undefined'] = 0;
 
   for (var i = 0; i < props.fatalities.length; i++) {
-    const time = props.fatalities[i]['Time'];
-    const parsedTime = moment(time, ['h:m a']);
+    const time = props.fatalities[i]['time'];
+    const parsedTime = moment(time, ['H:m:s']);
     if (parsedTime.isBetween(moment('00:00 a', ['h:m a']), moment('6:30 a', ['h:ma']), null, '[]')) {
       let timeCount = datamap['1001p-630a'];
       datamap['1001p-630a'] = timeCount + 1;

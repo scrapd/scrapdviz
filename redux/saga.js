@@ -16,6 +16,31 @@ function isInRange(date, from_, to) {
   return true;
 }
 
+function flattenFatalities(fatalities) {
+  let datamap = new Array()
+  for (var i = 0; i < fatalities.length; i++) {
+    for (var j = 0; j < fatalities[i]["fatalities"].length; j++) {
+      let data = Object();
+      data["case"] = fatalities[i]["case"];
+      data["crash"] = fatalities[i]["crash"];
+      data["date"] = fatalities[i]["date"];
+      data["latitude"] = fatalities[i]["latitude"];
+      data["link"] = fatalities[i]["link"];
+      data["location"] = fatalities[i]["location"];
+      data["longitude"] = fatalities[i]["longitude"];
+      data["notes"] = fatalities[i]["notes"];
+      data["time"] = fatalities[i]["time"];
+
+      data["age"] = fatalities[i]["fatalities"][j]["age"];
+      data["ethnicity"] = fatalities[i]["fatalities"][j]["ethnicity"];
+      data["gender"] = fatalities[i]["fatalities"][j]["gender"];
+      data["name"] = fatalities[i]["fatalities"][j]["first"] + " " + fatalities[i]["fatalities"][j]["middle"] + " " + fatalities[i]["fatalities"][j]["last"] + " " + fatalities[i]["fatalities"][j]["generation"];
+      datamap.push(data)
+    }
+  }
+  return datamap;
+}
+
 function filterFatalities(fatalities, from_, to) {
   let data = new Array()
   for (var i = 0; i < fatalities.length; i++) {
@@ -36,7 +61,8 @@ function* workerFetchDataAsync(action) {
   const endpoint = 'https://raw.githubusercontent.com/scrapd/datasets/master/datasets/fatalities-all-augmented.json';
   const response = yield call(fetch, endpoint);
   const fatalities = yield call([response, "json"]);
-  const f = filterFatalities(fatalities, from_, to);
+  const flat_f = flattenFatalities(fatalities);
+  const f = filterFatalities(flat_f, from_, to);
   // yield delay(1000)
   yield put(fetchData(f));
 }
@@ -61,3 +87,4 @@ export default function* rootSaga() {
     watchFetchDataAsync(), watchFetchArchivesAsync()
   ])
 }
+

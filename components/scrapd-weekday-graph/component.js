@@ -13,8 +13,8 @@ const ScrapdWeekdayGraph = props => {
   datamap['Sunday'] = 0;
 
   for (var i = 0; i < props.fatalities.length; i++) {
-    const date = props.fatalities[i]['Date'];
-    const dow = moment(date, ['MM/DD/YYYY']).isoWeekday();
+    const date = props.fatalities[i]['date'];
+    const dow = moment(date, ['YYYY-MM-DD']).isoWeekday();
     const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const dayOfWeek = daysOfWeek[dow - 1];
     datamap[dayOfWeek] = datamap[dayOfWeek] + 1;

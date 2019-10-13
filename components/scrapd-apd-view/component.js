@@ -30,8 +30,8 @@ const ScrapdApdView = ({ fatalities }) => {
       <ScrapdNoDataAlert count={fatalities.length} />
       <ScrapdGrid fatalities={fatalities} />
       <GraphArea>
-        <ScrapdPieGraph fatalities={fatalities} attribute="Gender" />
-        <ScrapdPieGraph fatalities={fatalities} attribute="Ethnicity" />
+        <ScrapdPieGraph fatalities={fatalities} attribute="gender" />
+        <ScrapdPieGraph fatalities={fatalities} attribute="ethnicity" />
         <ScrapdAgeGraph fatalities={fatalities} />
         <ScrapdMonthGraph fatalities={fatalities} />
         <ScrapdWeekdayGraph fatalities={fatalities} />
