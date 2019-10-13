@@ -9,11 +9,11 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`));
 const ScrapdFatalityCounter = props => {
   const fatalityCount = props.fatalities.length;
 
-  let casesArray = new Array() 
+  let casesArray = new Array();
   for (var i = 0; i < props.fatalities.length; i++) {
-      casesArray.push(props.fatalities[i].case);
-  };
-    
+    casesArray.push(props.fatalities[i].case);
+  }
+
   let caseCount = new Set(casesArray).size;
 
   const CounterDiv = styled.div(

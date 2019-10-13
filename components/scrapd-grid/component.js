@@ -27,7 +27,7 @@ class ScrapdGrid extends React.Component {
       {
         title: 'Case',
         dataIndex: 'case',
-        key: 'Case',
+        key: 'case',
         render: (text, record) => (
           <a target="_blank" rel="noopener noreferrer" href={record.Link}>
             {text}
@@ -37,23 +37,23 @@ class ScrapdGrid extends React.Component {
       {
         title: 'Crash',
         dataIndex: 'crash',
-        key: 'Fatal crashes this year',
+        key: 'crash',
         sortDirections: ['descend'],
-        sorter: (a, b) => a['Fatal crashes this year'] - b['Fatal crashes this year']
+        sorter: (a, b) => a['crash'] - b['crash']
       },
       {
         title: 'Date',
         dataIndex: 'date',
-        key: 'Date',
+        key: 'date',
         defaultSortOrder: 'descend',
-        sorter: (a, b) => new moment(a.Date) - new moment(b.Date)
+        sorter: (a, b) => new moment(a.date) - new moment(b.Date)
       },
-      { title: 'Time', dataIndex: 'time', key: 'Time' },
-      { title: 'Location', dataIndex: 'location', key: 'Location' },
-      { title: 'Name', dataIndex: 'name', key: 'Name' },
-      { title: 'Ethnicity', dataIndex: 'ethnicity', key: 'Ethnicity' },
-      { title: 'Gender', dataIndex: 'gender', key: 'Gender' },
-      { title: 'Age', dataIndex: 'age', key: 'Age' }
+      { title: 'Time', dataIndex: 'time', key: 'time' },
+      { title: 'Location', dataIndex: 'location', key: 'location' },
+      { title: 'Name', dataIndex: 'name', key: 'name' },
+      { title: 'Ethnicity', dataIndex: 'ethnicity', key: 'ethnicity' },
+      { title: 'Gender', dataIndex: 'gender', key: 'gender' },
+      { title: 'Age', dataIndex: 'age', key: 'age' }
     ];
   }
 
