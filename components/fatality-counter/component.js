@@ -14,7 +14,7 @@ const ScrapdFatalityCounter = props => {
       casesArray.push(props.fatalities[i].case);
   };
     
-  let caseCount = [...new Set(casesArray)].length;
+  let caseCount = new Set(casesArray).size;
 
   const CounterDiv = styled.div(
     mq({
