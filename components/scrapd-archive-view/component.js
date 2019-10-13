@@ -34,7 +34,7 @@ const ScrapdArchiveView = ({ fatalities }) => {
         <ScrapdWeekdayGraph fatalities={fatalities} />
         <ScrapdTimeGraph fatalities={fatalities} />
         <ScrapdCauseGraph fatalities={fatalities} />
-        <ScrapdPieGraph fatalities={fatalities} attribute="Type" />
+        <ScrapdPieGraph fatalities={fatalities} attribute="type" />
         <ScrapdFatality fatalities={fatalities} />
         <ScrapdMap fatalities={fatalities} />
       </GraphArea>

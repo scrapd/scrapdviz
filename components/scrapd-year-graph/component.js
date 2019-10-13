@@ -5,8 +5,8 @@ import moment from 'moment';
 const ScrapdYearGraph = props => {
   let datamap = new Object();
   for (var i = 0; i < props.fatalities.length; i++) {
-    const date = props.fatalities[i]['Date'];
-    const year = moment(date, ['MM/DD/YYYY']).year();
+    const date = props.fatalities[i]['date'];
+    const year = moment(date, ['YYYY-MM-DD']).year();
     if (datamap[year] == undefined) {
       datamap[year] = 0;
     } else {
