@@ -79,13 +79,8 @@ const ScrapdHomeView = () => {
         url="/static/images/photos/hero_image.png"
       />
       <ScrapdHomeSection title="What is ScrAPD?" text={intro} img={'/static/images/photos/scrapd_docs.jpg'} />
-      <ScrapdHomeSection title="Data Sets" text={grabData} img={'/static/images/photos/data_world.jpg'} />
-      <ScrapdHomeSection
-        title="Visualizing the data"
-        text={viewData}
-        img={'/static/images/photos/scrapd_viz.jpg'}
-        reverse
-      />
+      <ScrapdHomeSection title="Data Sets" text={grabData} img={'/static/images/photos/data_world.jpg'} reverse />
+      <ScrapdHomeSection title="Visualizing the data" text={viewData} img={'/static/images/photos/scrapd_viz.jpg'} />
       <ScrapdHomeSection
         title="Contributing"
         text={contribute}
