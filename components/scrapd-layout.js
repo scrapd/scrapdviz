@@ -100,7 +100,7 @@ class ScrapdLayout extends React.Component {
 }
 
 ScrapdLayout.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.array,
   date_filter: PropTypes.object,
   view: PropTypes.string,
   selectView: PropTypes.func.isRequired
