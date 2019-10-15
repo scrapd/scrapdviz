@@ -29,7 +29,7 @@ class ScrapdGrid extends React.Component {
         dataIndex: 'case',
         key: 'case',
         render: (text, record) => (
-          <a target="_blank" rel="noopener noreferrer" href={record.Link}>
+          <a target="_blank" rel="noopener noreferrer" href={record.link}>
             {text}
           </a>
         )
