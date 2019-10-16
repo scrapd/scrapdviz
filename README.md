@@ -31,3 +31,11 @@ To test the project locally (i.e. running the full list of ci-tasks):
 npm run ci
 ```
 The `scripts` section of the `package.json` file will show you all the available commands.
+
+## Doing Lighthouse scans
+
+To test the project against using Lighthouse run this command while hosting locally :
+```
+npm run litereport
+```
+
