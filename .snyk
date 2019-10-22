@@ -768,6 +768,10 @@ patch:
         patched: '2019-10-04T18:18:51.465Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
         patched: '2019-10-04T18:18:51.465Z'
+    - lighthouse > inquirer > lodash:
+        patched: '2019-10-22T02:52:27.217Z'
+    - lighthouse-ci > lighthouse > inquirer > lodash:
+        patched: '2019-10-22T02:52:27.217Z'
   SNYK-JS-HTTPSPROXYAGENT-469131:
     - snyk > proxy-agent > https-proxy-agent:
         patched: '2019-10-04T04:21:56.505Z'
