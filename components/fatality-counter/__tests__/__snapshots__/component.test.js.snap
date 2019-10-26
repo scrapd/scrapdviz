@@ -10,28 +10,28 @@ exports[`Fatality counter component Renders properly with empty fatalities 1`] =
     >
       <CountStyle>
         <div
-          className="css-3k5dok-CountStyle e1567l2h1"
+          className="css-lj895e-CountStyle e1567l2h1"
         >
           0
         </div>
       </CountStyle>
       <GraphTitle>
         <p
-          className="css-1u9og1w-GraphTitle e1567l2h2"
+          className="css-1wt98x7-GraphTitle e1567l2h2"
         >
           Fatalities
         </p>
       </GraphTitle>
       <CountStyle>
         <div
-          className="css-3k5dok-CountStyle e1567l2h1"
+          className="css-lj895e-CountStyle e1567l2h1"
         >
           0
         </div>
       </CountStyle>
       <GraphTitle>
         <p
-          className="css-1u9og1w-GraphTitle e1567l2h2"
+          className="css-1wt98x7-GraphTitle e1567l2h2"
         >
           Crashes
         </p>
@@ -3853,28 +3853,28 @@ This case is still being investigated.",
     >
       <CountStyle>
         <div
-          className="css-3k5dok-CountStyle e1567l2h1"
+          className="css-lj895e-CountStyle e1567l2h1"
         >
           156
         </div>
       </CountStyle>
       <GraphTitle>
         <p
-          className="css-1u9og1w-GraphTitle e1567l2h2"
+          className="css-1wt98x7-GraphTitle e1567l2h2"
         >
           Fatalities
         </p>
       </GraphTitle>
       <CountStyle>
         <div
-          className="css-3k5dok-CountStyle e1567l2h1"
+          className="css-lj895e-CountStyle e1567l2h1"
         >
           156
         </div>
       </CountStyle>
       <GraphTitle>
         <p
-          className="css-1u9og1w-GraphTitle e1567l2h2"
+          className="css-1wt98x7-GraphTitle e1567l2h2"
         >
           Crashes
         </p>

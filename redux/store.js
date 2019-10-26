@@ -15,7 +15,7 @@ const bindMiddleware = (middleware) => {
 }
 
 // Define the initial state of the store .
-const initialState = {
+const defaultInitialState = {
   date_filter: { from_: moment().startOf('year'), to: moment().endOf('year') },
   fatalities: [],
   archives: [],
@@ -33,7 +33,7 @@ export const actionTypes = {
 }
 
 // Define reducers.
-export const reducer = (state = initialState, action) => {
+export const reducer = (state = defaultInitialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_ARCHIVES:
     case actionTypes.FETCH_DATA:
@@ -80,7 +80,7 @@ export const selectView = (view) => ({
 });
 
 // Initialize store.
-export function initializeStore(initialState = initialState) {
+export function initializeStore(initialState = defaultInitialState) {
   const store = createStore(reducer, initialState, bindMiddleware([sagaMiddleware]))
   store.runSagaTask = () => {
     store.sagaTask = sagaMiddleware.run(rootSaga)

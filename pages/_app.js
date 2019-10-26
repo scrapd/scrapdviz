@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 import Router from 'next/router';
@@ -8,26 +8,14 @@ import { Provider } from 'react-redux';
 import { initializeStore } from '../redux/store';
 import * as gtag from '../lib/gtag';
 
-Router.events.on('routeChangeComplete', url => gtag.pageview(url));
+const isProduction = process.env.NODE_ENV === 'production';
+isProduction && Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
 class CustomApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-
-    // We can dispatch from here too.
-    // ctx.store.dispatch({ type: 'FOO', payload: 'foo' });
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
-  }
-
   render() {
     const { Component, pageProps, store } = this.props;
     return (
-      <Container>
+      <>
         <Head>
           <title>ScrAPDviz</title>
         </Head>
@@ -35,7 +23,7 @@ class CustomApp extends App {
         <Provider store={store}>
           <Component {...pageProps} />
         </Provider>
-      </Container>
+      </>
     );
   }
 }

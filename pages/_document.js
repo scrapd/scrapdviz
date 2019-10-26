@@ -4,12 +4,6 @@ import { GA_TRACKING_ID } from '../lib/gtag';
 import { Fragment } from 'react';
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const isProduction = process.env.NODE_ENV === 'production';
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps, isProduction };
-  }
-
   render() {
     const { isProduction } = this.props;
     return (
