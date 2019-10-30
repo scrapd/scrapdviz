@@ -7,6 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[1.1.4]] - 2019-10-29
+
+### Fixed
+
+* Replace hero image with smaller image (half the size), more representative of our app's mission. [#185]
+
+### Security
+
+* Snyk patched vulnerabilities. [#182]
+
+## [[1.1.3]] - 2019-10-15
+
+### Fixed
+
+* Fix report link in grid in APD view. [#180]
+
+## [[1.1.2]] - 2019-10-14
+
+### Fixed
+
+* Fix the archive view graphs. [#178]
+* Fix home page layout. The images were not alternating right-left. [#179]
+
+## [[1.1.1]] - 2019-10-13
+
+### Fixed
+
+* Fix Sorting function and date format. [#177]
+
+## [[1.1.0]] - 2019-10-12
+
+### Changed
+
+* Update the dashboard to support ScrAPD 3 data format
+  * Update grid column labels. [#171]
+  * Update several components for ScrAPD3
+    These graphs are working properly now: gender, ethnicity, age, month, weekday, time, and the map
+  * Add crash counter
+
 ## [[1.0.0]] - 2019-10-06
 
 ### Added
@@ -70,6 +109,12 @@ This is the first complete release of ScrAPDviz.
 [0.2.4]: https://github.com/scrapd/scrapdviz/releases/tag/0.2.4
 [0.3.0]: https://github.com/scrapd/scrapdviz/releases/tag/0.3.0
 [0.4.0]: https://github.com/scrapd/scrapdviz/releases/tag/0.4.0
+[1.0.0]: https://github.com/scrapd/scrapdviz/releases/tag/1.0.0
+[1.1.0]: https://github.com/scrapd/scrapdviz/releases/tag/1.1.0
+[1.1.1]: https://github.com/scrapd/scrapdviz/releases/tag/1.1.1
+[1.1.2]: https://github.com/scrapd/scrapdviz/releases/tag/1.1.2
+[1.1.3]: https://github.com/scrapd/scrapdviz/releases/tag/1.1.3
+[1.1.4]: https://github.com/scrapd/scrapdviz/releases/tag/1.1.4
 
 [//]: # (PR links)
 [#89]: https://github.com/scrapd/scrapdviz/pull/89
@@ -92,3 +137,9 @@ This is the first complete release of ScrAPDviz.
 [#149]: https://github.com/scrapd/scrapdviz/pull/149
 [#164]: https://github.com/scrapd/scrapdviz/pull/164
 [#167]: https://github.com/scrapd/scrapdviz/pull/167
+[#171]: https://github.com/scrapd/scrapdviz/pull/171
+[#177]: https://github.com/scrapd/scrapdviz/pull/177
+[#178]: https://github.com/scrapd/scrapdviz/pull/178
+[#179]: https://github.com/scrapd/scrapdviz/pull/179
+[#182]: https://github.com/scrapd/scrapdviz/pull/182
+[#185]: https://github.com/scrapd/scrapdviz/pull/185
