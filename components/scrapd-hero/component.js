@@ -4,7 +4,8 @@ import styled from '@emotion/styled';
 const HeroImage = styled.div(props => ({
   height: '500px',
   backgroundImage: 'url(' + props.url + ')',
-  backgroundSize: 'cover'
+  backgroundSize: '100%',
+  backgroundPosition: '100% 70%'
 }));
 
 const Text = styled.div({
