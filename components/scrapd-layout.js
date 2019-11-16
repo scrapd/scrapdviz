@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PropTypes from 'prop-types';
+import Proptypes from 'prop-types';
 import styled from '@emotion/styled';
 import { Row, Col, Icon, Layout, Menu } from 'antd';
 import { connect } from 'react-redux';
@@ -100,10 +100,10 @@ class ScrapdLayout extends React.Component {
 }
 
 ScrapdLayout.propTypes = {
-  children: PropTypes.array,
-  date_filter: PropTypes.object,
-  view: PropTypes.string,
-  selectView: PropTypes.func.isRequired
+  children: Proptypes.array,
+  date_filter: Proptypes.object,
+  view: Proptypes.string,
+  selectView: Proptypes.func.isRequired
 };
 
 const mapStateToProps = state => {
