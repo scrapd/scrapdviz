@@ -5,7 +5,8 @@ const HeroImage = styled.div(props => ({
   height: '500px',
   backgroundImage: 'url(' + props.url + ')',
   backgroundSize: '100%',
-  backgroundPosition: '100% 70%'
+  backgroundPosition: '100% 70%',
+  position: 'relative'
 }));
 
 const Text = styled.div({
@@ -29,6 +30,17 @@ const Subtitle = styled.h2({
   fontWeight: 'bold'
 });
 
+const CreditStyle = {
+  fontSize: '.9em',
+  fontWeight: 'bold',
+  fontStyle: 'italic',
+  lineHeight: '0',
+  color: 'white',
+  position: 'absolute',
+  right: '15px',
+  bottom: '0'
+};
+
 const ScrapdHero = props => {
   return (
     <HeroImage url={props.url}>
@@ -37,6 +49,12 @@ const ScrapdHero = props => {
         <Subtitle> {props.subtitle1}</Subtitle>
         <Subtitle> {props.subtitle2}</Subtitle>
       </Text>
+      <p style={CreditStyle}>
+        Photo by Gunawan Kartapranata, under{' '}
+        <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" rel="noopener noreferrer" target="_blank">
+          CC license
+        </a>
+      </p>
     </HeroImage>
   );
 };
