@@ -23,14 +23,16 @@ const Text = styled('div')`
   })};
 `;
 
-const Title = styled.h1({
-  fontSize: '10vh',
-  width: 'auto',
-  textAlign: 'center',
-  color: 'white',
-  fontWeight: 'bold',
-  marginBottom: '0px'
-});
+const Title = styled(`h1`)`
+  ${mq({
+    fontSize: ['4em', '5.5em'],
+    width: 'auto',
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+    marginBottom: '0px'
+  })};
+`;
 
 const Subtitle = styled('h2')`
   ${mq({
