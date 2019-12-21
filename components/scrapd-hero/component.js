@@ -45,15 +45,22 @@ const Subtitle = styled('h2')`
   })};
 `;
 
+const CaptionDiv = styled('div')`
+  ${mq({
+    position: 'absolute',
+    right: '15px',
+    bottom: '0',
+    display: ['none', 'inline']
+  })};
+`;
+
 const CreditStyle = {
   fontSize: '.9em',
   fontWeight: 'bold',
   fontStyle: 'italic',
   lineHeight: '0',
   color: 'white',
-  position: 'absolute',
-  right: '15px',
-  bottom: '0'
+  textAlign: 'center'
 };
 
 const ScrapdHero = props => {
@@ -64,12 +71,15 @@ const ScrapdHero = props => {
         <Subtitle> {props.subtitle1}</Subtitle>
         <Subtitle> {props.subtitle2}</Subtitle>
       </Text>
-      <p style={CreditStyle}>
-        Photo by Gunawan Kartapranata, under{' '}
-        <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" rel="noopener noreferrer" target="_blank">
-          CC license
-        </a>
-      </p>
+      <CaptionDiv>
+        <p style={CreditStyle}>Photo by Gunawan Kartapranata</p>
+        <p style={CreditStyle}>
+          under{' '}
+          <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" rel="noopener noreferrer" target="_blank">
+            CC license
+          </a>
+        </p>
+      </CaptionDiv>
     </HeroImage>
   );
 };
