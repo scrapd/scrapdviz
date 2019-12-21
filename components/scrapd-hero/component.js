@@ -4,9 +4,10 @@ import styled from '@emotion/styled';
 const HeroImage = styled.div(props => ({
   height: '500px',
   backgroundImage: 'url(' + props.url + ')',
-  backgroundSize: '100%',
-  backgroundPosition: '100% 70%',
-  position: 'relative'
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  position: 'relative',
+  backgroundRepeat: 'no-repeat'
 }));
 
 const Text = styled.div({
@@ -65,4 +66,5 @@ ScrapdHero.propTypes = {
   subtitle2: PropTypes.string,
   url: PropTypes.string
 };
+
 export default ScrapdHero;
