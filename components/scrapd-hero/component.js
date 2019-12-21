@@ -1,19 +1,27 @@
 import PropTypes from 'prop-types';
+import facepaint from 'facepaint';
 import styled from '@emotion/styled';
 
-const HeroImage = styled.div(props => ({
-  height: '500px',
-  backgroundImage: 'url(' + props.url + ')',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  position: 'relative',
-  backgroundRepeat: 'no-repeat'
-}));
+const breakpoints = [425, 768];
+const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`));
 
-const Text = styled.div({
-  position: 'relative',
-  top: '40%'
-});
+const HeroImage = styled.div(props =>
+  mq({
+    height: ['400px', '500px'],
+    backgroundImage: 'url(' + props.url + ')',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    position: 'relative',
+    backgroundRepeat: 'no-repeat'
+  })
+);
+
+const Text = styled('div')`
+  ${mq({
+    position: 'relative',
+    top: ['35%', '40%']
+  })};
+`;
 
 const Title = styled.h1({
   fontSize: '10vh',
@@ -24,12 +32,16 @@ const Title = styled.h1({
   marginBottom: '0px'
 });
 
-const Subtitle = styled.h2({
-  fontSize: '1em',
-  textAlign: 'center',
-  color: 'white',
-  fontWeight: 'bold'
-});
+const Subtitle = styled('h2')`
+  ${mq({
+    fontSize: ['1.1em', '1.3em'],
+    textAlign: 'center',
+    color: 'white',
+    paddingRight: '5%',
+    paddingLeft: '5%',
+    fontWeight: 'bold'
+  })};
+`;
 
 const CreditStyle = {
   fontSize: '.9em',
