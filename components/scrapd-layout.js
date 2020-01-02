@@ -111,7 +111,4 @@ const mapStateToProps = state => {
   return { date_filter, fatalities, view };
 };
 
-export default connect(
-  mapStateToProps,
-  { selectView }
-)(ScrapdLayout);
+export default connect(mapStateToProps, { selectView })(ScrapdLayout);

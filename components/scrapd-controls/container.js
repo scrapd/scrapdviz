@@ -52,7 +52,4 @@ const mapStateToProps = state => {
   return { date_filter, archives, fatalities };
 };
 
-export default connect(
-  mapStateToProps,
-  { fetchArchivesAsync, fetchDataAsync, selectDate }
-)(ScrapdControlsContainer);
+export default connect(mapStateToProps, { fetchArchivesAsync, fetchDataAsync, selectDate })(ScrapdControlsContainer);

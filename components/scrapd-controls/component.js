@@ -75,6 +75,7 @@ const ScrapdControls = ({ date_filter, fatalities, onChange }) => {
               "'17": [moment('2017-01-01').startOf('year'), moment('2017-01-01').endOf('year')],
               "'18": [moment('2018-01-01').startOf('year'), moment('2018-01-01').endOf('year')],
               "'19": [moment('2019-01-01').startOf('year'), moment('2019-01-01').endOf('year')],
+              "'20": [moment('2020-01-01').startOf('year'), moment('2020-01-01').endOf('year')],
               All: [moment('2013-01-01').startOf('year'), moment('2025-01-01').endOf('year')]
             }}
             onChange={onChange}
