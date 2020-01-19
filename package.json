@@ -7,7 +7,7 @@
     "build": "next build",
     "ci": "run-s lint:* test",
     "dev": "node server.js",
-    "dump": "run-s build export",
+    "dump": "NODE_ENV=production run-s build export",
     "export": "next export",
     "fix": "run-s fix:*",
     "fix:format": "prettier --write \"pages/**/*.js\" \"components/**/*.js\"",

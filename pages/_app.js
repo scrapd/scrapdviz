@@ -7,8 +7,11 @@ import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import { initializeStore } from '../redux/store';
 import * as gtag from '../lib/gtag';
+import getConfig from 'next/config';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const { publicRuntimeConfig } = getConfig();
+const { NODE_ENV } = publicRuntimeConfig;
+const isProduction = NODE_ENV === 'production';
 isProduction && Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
 class CustomApp extends App {
