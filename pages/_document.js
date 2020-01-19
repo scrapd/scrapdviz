@@ -2,10 +2,14 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import { GA_TRACKING_ID } from '../lib/gtag';
 // We wrap our scripts below in Fragment to avoid unnecessary mark up
 import { Fragment } from 'react';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
+const { NODE_ENV } = publicRuntimeConfig;
+const isProduction = NODE_ENV === 'production';
 
 export default class MyDocument extends Document {
   render() {
-    const { isProduction } = this.props;
     return (
       <html lang="en">
         <Head>
