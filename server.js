@@ -2,6 +2,7 @@ const { join } = require('path');
 const express = require('express');
 const next = require('next');
 const cache = require('lru-cache'); // for using least-recently-used based caching
+const csp = require('./csp');
 
 const PORT = 8000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -10,11 +11,14 @@ const handle = app.getRequestHandler();
 
 const ssrCache = new cache({
   max: 20, // not more than 20 results will be cached
-  maxAge: 1000 * 60 * 5, // 5 mins
+  maxAge: 1000 * 60 * 5 // 5 mins
 });
 
 app.prepare().then(() => {
   const server = express();
+
+  csp(server);
+
   server.get('/', (req, res) => {
     renderAndCache(req, res, '/');
   });
