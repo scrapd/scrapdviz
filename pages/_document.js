@@ -14,7 +14,21 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="title" content="ScrAPDviz" />
           <meta name="description" content="Visualize Austin traffic fatalities from another angle" />
+
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://viz.scrapd.org/" />
+          <meta property="og:title" content="ScrAPDviz" />
+          <meta property="og:description" content="Visualize Austin traffic fatalities from another angle" />
+          <meta property="og:image" content="https://viz.scrapd.org/static/images/photos/hero_image.png" />
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://viz.scrapd.org/" />
+          <meta property="twitter:title" content="ScrAPDviz" />
+          <meta property="twitter:description" content="Visualize Austin traffic fatalities from another angle" />
+          <meta property="twitter:image" content="https://viz.scrapd.org/static/images/photos/hero_image.png" />
+
           <style>
             {`
             * {
