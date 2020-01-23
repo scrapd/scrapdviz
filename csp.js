@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const helmet = require('helmet');
 const uuidv4 = require('uuid/v4');
 
@@ -5,6 +6,14 @@ const uuidv4 = require('uuid/v4');
 // https://pyvideo.org/pybay-2019/browser-security-with-http-headers.html
 // export default function csp(app) {
 module.exports = function csp(app) {
+=======
+import helmet from 'helmet';
+import uuidv4 from 'uuid/v4';
+
+// Configuration values mostly come from this talk:
+// https://pyvideo.org/pybay-2019/browser-security-with-http-headers.html
+export default function csp(app) {
+>>>>>>> Improves the security headers
   // Create a nonce on every request and make it available to other middleware
   app.use((req, res, next) => {
     res.locals.nonce = Buffer.from(uuidv4()).toString('base64');
