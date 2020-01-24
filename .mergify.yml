@@ -1,6 +1,7 @@
 pull_request_rules:
 - name: master
   actions:
+    rebase: {}
     merge:
       method: squash
       rebase_fallback: merge
@@ -11,7 +12,7 @@ pull_request_rules:
   - 'status-success=ci/circleci: prepare'
   - 'status-success=ci/circleci: lint'
   - 'status-success=ci/circleci: test'
-  
+
 - name: automatic merge from dependabot or snyk-bot
   conditions:
     - author~=^(snyk-bot|dependabot)(|-preview)(\[bot\])?$
