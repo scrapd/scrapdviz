@@ -5,6 +5,7 @@ import { Row, Col, Icon, Layout, Menu } from 'antd';
 import { connect } from 'react-redux';
 import { selectView } from '../redux/store';
 import React from 'react';
+import { withRouter } from 'next/router';
 
 const { Content, Footer, Header } = Layout;
 
@@ -33,6 +34,12 @@ class ScrapdLayout extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    if (this.props.router.pathname !== this.props.view) {
+      this.props.selectView(this.props.router.pathname);
+    }
+  }
+
   handleClick = e => {
     console.log('click ', e);
     this.props.selectView(e.key);
@@ -51,17 +58,17 @@ class ScrapdLayout extends React.Component {
               selectedKeys={[this.props.view]}
               style={{ lineHeight: '64px' }}
             >
-              <Menu.Item key="home">
+              <Menu.Item key="/">
                 <Link href="/">
                   <a>Home</a>
                 </Link>{' '}
               </Menu.Item>
-              <Menu.Item key="apdView">
+              <Menu.Item key="/apd">
                 <Link href="/apd">
                   <a>APD</a>
                 </Link>{' '}
               </Menu.Item>
-              <Menu.Item key="archiveView">
+              <Menu.Item key="/archives">
                 <Link href="/archives">
                   <a>Archives</a>
                 </Link>{' '}
@@ -102,8 +109,9 @@ class ScrapdLayout extends React.Component {
 ScrapdLayout.propTypes = {
   children: Proptypes.array,
   date_filter: Proptypes.object,
-  view: Proptypes.string,
-  selectView: Proptypes.func.isRequired
+  router: Proptypes.object,
+  selectView: Proptypes.func.isRequired,
+  view: Proptypes.string
 };
 
 const mapStateToProps = state => {
@@ -111,4 +119,4 @@ const mapStateToProps = state => {
   return { date_filter, fatalities, view };
 };
 
-export default connect(mapStateToProps, { selectView })(ScrapdLayout);
+export default connect(mapStateToProps, { selectView })(withRouter(ScrapdLayout));
