@@ -1,5 +1,5 @@
-const helmet = require('helmet')
-const uuidv4 = require('uuid/v4')
+const helmet = require('helmet');
+const uuidv4 = require('uuid/v4');
 
 // Configuration values mostly come from this talk:
 // https://pyvideo.org/pybay-2019/browser-security-with-http-headers.html
@@ -52,4 +52,4 @@ module.exports = function csp(app) {
   app.use(helmet.xssFilter());
   // Sets "X-Content-Type-Options: nosniff".
   app.use(helmet.noSniff());
-}
+};
