@@ -13,7 +13,7 @@ module.exports = function csp(app) {
 
   const nonce = (req, res) => `'nonce-${res.locals.nonce}'`;
 
-  const scriptSrc = [nonce, "'strict-dynamic'", "'unsafe-inline'", 'https:'];
+  const scriptSrc = [nonce, 'https:', 'localhost:*'];
 
   // In dev we allow 'unsafe-eval', so HMR doesn't trigger the CSP
   if (process.env.NODE_ENV !== 'production') {
@@ -24,9 +24,16 @@ module.exports = function csp(app) {
     helmet({
       contentSecurityPolicy: {
         directives: {
-          baseUri: ["'none'"],
-          objectSrc: ["'none'"],
-          scriptSrc
+          connectSrc: [
+            'https://*.tiles.mapbox.com',
+            'https://api.mapbox.com',
+            'https://events.mapbox.com',
+            'https://raw.githubusercontent.com',
+            'localhost:*'
+          ],
+          imgSrc: ['data:', 'blob:', 'localhost:*'],
+          scriptSrc,
+          workerSrc: ['blob:', 'localhost:*']
         }
       },
       policy: ['strict-origin-when-cross-origin', 'unsafe-url']
@@ -42,8 +49,8 @@ module.exports = function csp(app) {
     })
   );
 
-  // Sets "Referrer-Policy: strict-origin-when-cross-origin".
-  app.use(helmet.referrerPolicy({ policy: 'strict-origin-when-cross-origin' }));
+  // Sets "Referrer-Policy: origin.
+  app.use(helmet.referrerPolicy({ policy: 'origin' }));
 
   // The following headers are superseeded by the CSP policy, but still usefull for older browsers.
   // Sets "X-Frame-Options: DENY".
