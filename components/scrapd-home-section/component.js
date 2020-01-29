@@ -1,5 +1,9 @@
 import PropTypes from 'prop-types';
+import facepaint from 'facepaint';
 import styled from '@emotion/styled';
+
+const breakpoints = [425, 768];
+const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`));
 
 const ScrapdHomeSection = props => {
   const Section = styled.div({
@@ -13,13 +17,15 @@ const ScrapdHomeSection = props => {
     textAlign: 'center'
   });
 
-  const SectionTitleSpan = styled.span({
-    backgroundColor: 'white',
-    padding: '10px',
-    fontSize: '2.75em',
-    fontWeight: 'bold',
-    color: '#003CFF'
-  });
+  const SectionTitleSpan = styled('span')`
+    ${mq({
+      backgroundColor: 'white',
+      fontSize: ['2em', '2.75em'],
+      fontWeight: 'bold',
+      color: '#003CFF',
+      padding: '0px 15px'
+    })};
+  `;
 
   const Content = styled.div(props => ({
     display: 'flex',
@@ -31,13 +37,17 @@ const ScrapdHomeSection = props => {
     padding: '1em'
   }));
 
-  const Text = styled.div({
-    maxWidth: '75%',
-    minWidth: '75%'
-  });
+  const Text = styled('div')`
+    ${mq({
+      maxWidth: ['99%', '70%'],
+      minWidth: ['99%', '70%'],
+      fontSize: ['1em', '1.2em'],
+      paddingTop: ['0px']
+    })};
+  `;
 
   const Image = styled.img({
-    maxWidth: '300%',
+    maxWidth: ['100%', '75%'],
     maxHeight: '300px'
   });
 
