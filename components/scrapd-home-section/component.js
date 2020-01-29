@@ -22,7 +22,8 @@ const ScrapdHomeSection = props => {
       backgroundColor: 'white',
       fontSize: ['2em', '2.75em'],
       fontWeight: 'bold',
-      color: '#003CFF'
+      color: '#003CFF',
+      padding: '0px 15px'
     })};
   `;
 
