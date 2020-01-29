@@ -39,15 +39,15 @@ const ScrapdHomeSection = props => {
 
   const Text = styled('div')`
     ${mq({
-      maxWidth: ['99%', '80%'],
-      minWidth: ['99%', '80%'],
-      fontSize: ['1em', '1.6em'],
+      maxWidth: ['99%', '70%'],
+      minWidth: ['99%', '70%'],
+      fontSize: ['1em', '1.2em'],
       paddingTop: ['0px']
     })};
   `;
 
   const Image = styled.img({
-    maxWidth: '100%',
+    maxWidth: ['100%', '75%'],
     maxHeight: '300px'
   });
 
