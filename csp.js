@@ -20,25 +20,25 @@ module.exports = function csp(app) {
     scriptSrc.push("'unsafe-eval'");
   }
 
-  app.use(
-    helmet({
-      contentSecurityPolicy: {
-        directives: {
-          connectSrc: [
-            'https://*.tiles.mapbox.com',
-            'https://api.mapbox.com',
-            'https://events.mapbox.com',
-            'https://raw.githubusercontent.com',
-            'localhost:*'
-          ],
-          imgSrc: ['data:', 'blob:', 'localhost:*'],
-          scriptSrc,
-          workerSrc: ['blob:', 'localhost:*']
-        }
-      },
-      policy: ['strict-origin-when-cross-origin', 'unsafe-url']
-    })
-  );
+  // app.use(
+  //   helmet({
+  //     contentSecurityPolicy: {
+  //       directives: {
+  //         connectSrc: [
+  //           'https://*.tiles.mapbox.com',
+  //           'https://api.mapbox.com',
+  //           'https://events.mapbox.com',
+  //           'https://raw.githubusercontent.com',
+  //           'localhost:*'
+  //         ],
+  //         imgSrc: ['data:', 'blob:', 'localhost:*'],
+  //         // scriptSrc,
+  //         workerSrc: ['blob:', 'localhost:*']
+  //       }
+  //     },
+  //     policy: ['strict-origin-when-cross-origin', 'unsafe-url']
+  //   })
+  // );
 
   // Sets "Strict-Transport-Security: max-age=31536000"; includeSubDomains; preload.
   app.use(
