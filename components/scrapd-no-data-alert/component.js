@@ -1,4 +1,5 @@
 import { Alert } from 'antd';
+import Proptypes from 'prop-types';
 
 const ScrdapdNoDataAlert = ({ count }) =>
   count == 0 && (
@@ -8,5 +9,9 @@ const ScrdapdNoDataAlert = ({ count }) =>
       showIcon
     />
   );
+
+ScrdapdNoDataAlert.propTypes = {
+  count: Proptypes.number
+};
 
 export default ScrdapdNoDataAlert;
