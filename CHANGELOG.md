@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [[1.4.0]] - 2020-06-11
+
+### Changed
+
+- Use the new and shiny data set provided by the DoT Austin instead of the data
+  set from APD for the archives. [#207]
+
+### Security
+
+- Various security fixes applied from Snyk. [#202], [#203], [#206], [#208]
+
 ## [[1.3.0]] - 2020-01-29
 
 ### Changed
@@ -142,6 +153,7 @@ This is the first complete release of ScrAPDviz.
 [1.2.0]: https://github.com/scrapd/scrapdviz/releases/tag/1.2.0
 [1.2.1]: https://github.com/scrapd/scrapdviz/releases/tag/1.2.1
 [1.3.0]: https://github.com/scrapd/scrapdviz/releases/tag/1.3.0
+[1.4.0]: https://github.com/scrapd/scrapdviz/releases/tag/1.4.0
 
 [//]: # (PR links)
 [#89]: https://github.com/scrapd/scrapdviz/pull/89
@@ -176,3 +188,8 @@ This is the first complete release of ScrAPDviz.
 [#197]: https://github.com/scrapd/scrapdviz/pull/197
 [#198]: https://github.com/scrapd/scrapdviz/pull/198
 [#200]: https://github.com/scrapd/scrapdviz/pull/200
+[#202]: https://github.com/scrapd/scrapdviz/pull/202
+[#203]: https://github.com/scrapd/scrapdviz/pull/203
+[#206]: https://github.com/scrapd/scrapdviz/pull/206
+[#207]: https://github.com/scrapd/scrapdviz/pull/207
+[#208]: https://github.com/scrapd/scrapdviz/pull/208
