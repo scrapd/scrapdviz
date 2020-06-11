@@ -1409,3 +1409,11 @@ patch:
         patched: '2020-06-10T14:06:28.248Z'
     - next > @babel/preset-typescript > @babel/plugin-transform-typescript > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
         patched: '2020-06-10T14:06:28.248Z'
+    - victory > victory-histogram > lodash:
+        patched: '2020-06-11T13:39:34.915Z'
+    - victory > victory-histogram > victory-core > lodash:
+        patched: '2020-06-11T13:39:34.915Z'
+    - victory > victory-histogram > victory-bar > lodash:
+        patched: '2020-06-11T13:39:34.915Z'
+    - victory > victory-histogram > victory-bar > victory-core > lodash:
+        patched: '2020-06-11T13:39:34.915Z'
