@@ -62,7 +62,7 @@
     "react-mapbox-gl": "^4.8.6",
     "react-redux": "^7.1.3",
     "redux-saga": "^1.1.3",
-    "snyk": "^1.518.0",
+    "snyk": "^1.667.0",
     "victory": "^34.3.11"
   },
   "devDependencies": {
